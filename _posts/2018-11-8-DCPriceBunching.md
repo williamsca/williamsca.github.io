@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Price Bunching in DC
 categories: Economics
 ---

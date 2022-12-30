@@ -1,10 +1,8 @@
 ---
 title: Trends in Roman Epigraphy
 categories: Economics
-tags: ['Rome', 'Epigraphy']
+tags: ['Rome', 'epigraphy']
 ---
-
-## What Drives Epigraphic Writing?
 
 The demand for epitaphs ought to depend on several
 conditions: the number of Romans who died, their wealth, and the
@@ -14,10 +12,10 @@ mortality will be associated with more epitaphs. When the death rate
 is high, there will be relatively more subjects for epitaphs, and -- in a Malthusian
 economy -- their surviving relatives will have extra cash available
 for "luxury" purchases that exhibit their wealth, like high quality
-inscriptions. ([^1])
+inscriptions.[^1]
 
 The city of Rome suffered a series of epidemics in the latter half of
-the first century. ([^2]) Tacitus writes of Rome in 65 AD ([^3]): 
+the first century.[^2] Tacitus writes of Rome in 65 AD:[^3]
 
 > a terrible plague was sweeping away all classes of human beings
 > without any such derangement of the atmosphere as to be visibly
@@ -29,7 +27,7 @@ the first century. ([^2]) Tacitus writes of Rome in 65 AD ([^3]):
 > been sitting and shedding tears.
 
 Two further plagues followed in 77 AD and 79/80 AD. These epidemics were local to the city, and
-do not appear to have spread to the rest of Italy. ([^4]) By
+do not appear to have spread to the rest of Italy.[^4] By
 concentrating family estates in the hands of fewer individuals with
 many recently-deceased relatives, it is plausible that the plagues had a measurable effect on the
 demand for epitaphs. Consistent
