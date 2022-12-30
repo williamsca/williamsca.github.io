@@ -1,5 +1,4 @@
 ---
-layout: post
 title: An Epigraphy Gif
 categories: Economics
 tags: ['Rome', 'Epigraphy', 'gif']

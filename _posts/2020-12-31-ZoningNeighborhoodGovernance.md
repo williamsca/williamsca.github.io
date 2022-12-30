@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Build More by Compensating Current Residents
 categories: Economics
 tags: ['zoning', 'parking', 'Coase Theorem']

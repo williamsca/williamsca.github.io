@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Trends in Roman Epigraphy
 categories: Economics
 tags: ['Rome', 'Epigraphy']

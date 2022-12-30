@@ -1,10 +1,12 @@
 ---
-layout: post
 title: The Great Recession, Cereal Edition
 categories: Economics
 ---
 
-The bust was a difficult time for cereal fans.
+The financial crisis was a difficult time for cereal fans. The number of new products introduced in the breakfast cereal market fell from 60 to 20 in the three years after 2008.
+
+Official inflation measures tend to overestimate the true inflation rate because it is difficult to account for the introduction of new products. If other markets exhibited the same trends as cereals, the upward bias in inflation is likely to have fallen in the years immediately after 2008.
+
 
 ![png]({{ site.baseurl }}/images/20190709 Cereal Introductions by Year.png)
 

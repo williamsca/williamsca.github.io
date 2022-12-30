@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Lakota Hunting Dynamics
 categories: Economics
 mathjax: true

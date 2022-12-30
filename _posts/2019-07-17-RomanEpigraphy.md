@@ -1,8 +1,7 @@
 ---
-layout: post
 title: Mapping the Epigraphic Habit 
 categories: Economics
-tags: ['Rome', 'Epigraphy', 'Mapping', 'Pandas']
+tags: ['Rome', 'epigraphy', 'mapping', 'pandas']
 ---
 
 Across the Empire, Romans inscribed the significant events of their lives on stone. A record of deaths, vows to the gods, and public decrees, these inscriptions reached their highest frequency around the year 200 A.D. The map below depicts the density of inscription writing in Italy and the surrounding provinces.
