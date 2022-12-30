@@ -1,8 +1,8 @@
 ---
 layout: post
 title: The Rise of Agency Nursing
-categories: Economics
-tags: ['labor']
+tags: 
+- labor
 ---
 
 Many workers' jobs become somewhat more pleasant during the pandemic. Those who could work from home enjoyed instantaneous commutes, less supervision from their managers, and more flexibility in when and how they worked. While these changes certainly did not fully compensate workers for the hardship of the pandemic, they did partially offset it.
