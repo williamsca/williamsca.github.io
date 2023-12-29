@@ -4,6 +4,19 @@ date: 2023-12-15
 categories: books
 ---
 
+In light of recent advances in AI, I spent this year thinking about the future of work and education. These books offered useful perspectives:
+
+1. [Superintelligence: Paths, Dangers, Strategies](https://www.amazon.com/Superintelligence-Dangers-Strategies-Nick-Bostrom-ebook/dp/B00LOOCGB2/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=). (Nick Bostrom, 2014). A key introduction to the risks of artificial intelligence.
+
+2. [Going Remote: How the Flexible Work Economy Can Improve Our Lives and Our Cities](https://www.amazon.com/Going-Remote-Flexible-Economy-Improve/dp/0520384318). (Matthew E. Kahn, 2022). How will advances in remote work and the automation of knowledge work affect cities?
+
+3. [Astounding: John W. Campbell, Isaac Asimov, Robert A. Heinlein, L. Ron Hubbard, and the Golden Age of Science Fiction](https://www.amazon.com/Astounding-Campbell-Heinlein-Hubbard-Science/dp/006257194X). (Alec Nevala-Lee, 2018). As humanity wrestled with the promise and perils of nuclear energy, science fiction authors led the discussion and educated the public. This biography of John. W Campell, editor of *Astounding Science Fiction* magazine and "the most powerful force in science fiction ever," describes a group of authors who were deeply committed to science fiction as a tool to envision and achieve a better future.
+
+4. [The Moon is a Harsh Mistress](https://www.amazon.com/Moon-Harsh-Mistress-Robert-Heinlein-ebook/dp/B07CWGBZ4R/ref=sr_1_1?crid=3IIAKLOZAVXBT&keywords=the+moon+is+a+harsh+mistress+by+robert+heinlein&qid=1703858748&s=books&sprefix=the+moon+is+a+hars%2Cstripbooks%2C79&sr=1-1)(Robert A. Heinlein, 1966). A classic science fiction novel about a lunar colony that rebels against Earth with the help of a sentient computer named Mike. This book really nails how it feels to interact with Github Copilot:
+> Greatest shortcoming of computers isn't computer shortcoming at all but fact that a human takes a long time, maybe hours, to set up a program that a computer solves in milliseconds. One best quality of Mike was that he could program himself. Fast. Just explain problem, let him program.  
+
+1. [Empire of Ideas: Creating the Modern University from Germany to America to China](https://www.amazon.com/Empires-Ideas-Creating-University-Germany/dp/0674737717). (William C. Kirby, 2022). Eight case studies of universities that concludes with a discussion of whether China can lead world higher education in the 21st century. Great universities are an amalgamation of three distinct traditions: the German research university, the British college, and the American land-grant university. Which will be most robust to advances in AI?
+
 # What I Learned
 
 * The idea for Monte Carlo experiments came to the mathematician Stanislaw Ulam as he recovered from viral encephalitis in a hospital bed. While attempting to calculate the probability of victory in a game of solitaire using combinatorics, he realized that it would be much easier to "lay out 100 hands and simply observe and count the number of successful plays." Scientists at the Los Alamos project immediately applied the idea to simulating chain reactions as they developed the atomic bomb. From [The Man From the Future: The Visionary Life of John von Neumann](https://www.amazon.com/Man-Future-Visionary-Life-Neumann/dp/1324003995) by Ananyo Bhatttacharya (2021).
