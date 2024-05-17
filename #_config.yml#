@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Colin Williams"
 title_separator          : "-"
 name                     : &name "Colin Williams"
-description              : &description "Economics PhD Student at the University of Virginia"
+description              : &description "Economics PhD Candidate at the University of Virginia"
 url                      : https://williamsca.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "williamsca.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Colin Williams"
   avatar           : "profile.png"
-  bio              : "Economics researcher at UVA with interests in public, urban, and industrial organization."
+  bio              : "Economics PhD candidate at UVA with interests in public, urban, and industrial organization."
   location         : "Charlottesville, VA"
   employer         : The University of Virginia
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
