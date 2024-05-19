@@ -7,9 +7,11 @@ tags: ['public finance', 'unions', 'monopoly']
 
 What role do public sector unions play in determining the spending priorities of local government? In this post, I discuss a trio of recent papers that shed light on this question. Each finds that public sector unions leverage their monopoly power over the provision of public services to extract monopoly rents through higher wages, though they emphasize different mechanisms.
 
+These papers emphasize the ability of public sector unions to bargain for higher wages. Not all states allow collectively bargaining: ...
+
 # Intergovernmental Grants
 
-Feiveson (2015) 
+Suppose a local government finds a dollar bill on the ground (or, equivalently, that they receive an unexpected transfer from Uncle Sam). How will they spend it? Rather than returning the money to residents in the form of lower taxes, Feiveson (2015) shows that they spend it. Interestingly, *how* they spend it depends on the strength of public sector unions.
 
 # Local Amenities
 
