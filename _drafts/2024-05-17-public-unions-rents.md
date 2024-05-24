@@ -21,26 +21,33 @@ After showing that $1 of transfers from this program lead to about $1 of additio
 
 While cities in pro-union states spend about $0.78 of the extra dollar on wages, those in anti-union states spend merely $0.14, with the rest going to employment and capital outlays.
 
-While Feiveson emphasizes the implications of her results for macroeconomic policy and spending multipliers, I think the more interesting lesson is what we learn about the nature of local governments. Cities are sometimes viewed as firms whose shareholders are their residents (hence, a municipal *corporation*). When firms receive a dollar in windfall profits, we expect them to return it to their shareholders either via dividends or stock buybacks. The fact that cities *don't* distribute windfall gains to residents by lowering taxes tells us something about who their true "shareholders" are.
+While Feiveson emphasizes the implications of her results for macroeconomic policy and spending multipliers, I think the more interesting lesson is what we learn about the nature of local governments. Cities are sometimes viewed as firms whose shareholders are their residents (hence, a municipal *corporation*). When firms receive a dollar in windfall profits, we expect them to return it to their shareholders either via dividends or stock buybacks. The fact that cities *don't* distribute windfall gains to residents by lowering taxes tells us something about who their true shareholders are.
 
 ## Local Amenities
 
-A place with great weather, beautiful beaches, or a natural harbor can count on a steady stream of residents even if the local government is inefficient. Brueckner and Neumark (2014) push this idea a step further: do public employees actively exploit natural amenities to raise their wages without providing additional services?
+A place with great weather, beautiful beaches, or a natural harbor will have some residents even if the local government is corrupt or inefficient. Brueckner and Neumark (2014) push this idea a step further: can public employees actively exploit natural amenities to raise their wages without providing additional services?
 
-In the spirit of Buchanan, Brueckner and Neumark develop a model where public employees control the local government and choose their own wages. Public employees face the same trade-off as any monopolist: raising taxes yields more revenue per resident, but it leads some residents to move elsewhere. The model's key prediction is that amenities will increase the wages of public sector workers both absolutely and relative to private sector workers. 
+In the spirit of Buchanan, Brueckner and Neumark develop a model where public employees control the local government and choose their own wages. This may seem a bit crazy: after all, voters presumably have some say in wage setting through the political process. All that they really need, though, is that public employees can exert a teeny bit of influence on their wages. Given the importance of public sector unions in local elections, this assumption seems pretty reasonable.
 
-Brueckner and Nuemark test this prediction with a Mincer-style wage regression using CPS data. They include standard demographics controls plus measures of local amenities, an indicator for public sector status, and their interaction. If public sector workers are able to generate rents from local amenities, this interaction should be positive: nice weather + public employee = higher (relative) wages. And that's exactly what they find.
+In their model, public employees face the same trade-off as any monopolist: to raise more revenue for a raise, they can increase taxes, but that will cause some residents to move elsewhere. Their "wage-maximizing" tax rate will balance higher revenues per resident against the number of residents willing to put up with those taxes. Critically, great amenities allow public employees to push up taxes higher than they could otherwise because some residents will stay for the beaches or sunshine.
 
-...
+Brueckner and Nuemark test this prediction with Mincer-style wage regressions using CPS data. They include the standard demographics controls plus three variables motivated by their model: measures of local amenities, an indicator for public sector status, and their interaction. If public sector workers are able to generate rents from local amenities, this interaction should be positive. In short, nice weather + public employee = higher (relative) wage. And that's exactly what they find.
+
+Are all public sector employees able to collect these rents? Not quite. When they split their sample based on the extent of collective bargaining in the state, Brueckner and Neumark find that the effect of amenities on wages is only present in states with strong unions, as seen by comparing columns (3) and (4) in the table below
 
 ![png]({{ site.baseurl }}/images/brueckner-neumark-amenities-2014.png)
 
-
+In the highlighted row, *proximity* measures how close the average resident of the state is to a beach, Great Lake, or major river. For public employees in states without strong unions, there is little relationship between proximity and wages. But among states with strong unions, moving closer to a body of water is associated with a statistically significant increase in wages.
 
 ## Inelastic Housing Supply
 
 Diamond (2017)
 
+## Some Parting Thoughts
+
+In each of these studies, government productivity is the elephant in the room. So what if public wages are high -- maybe they've earned that raise by working harder or longer! There would seem to be room here for a project that constructed an objective measure of government output that could be compared across jurisdictions and over time, something like wait times at the DMV or 911 response times. Teacher value-added could work, but I'm not aware of any such estimates that are available for multiple school districts.
+
+Another way to get at public sector productivity is to look at government procurement. If two jurisdictions purchase the same inputs for different prices, it is safe to say that one is operating more efficiently than the other. There's ongoing research on this topic by Cailinn Slattery in the US and Garcia-Santana and Santamaria (2021) in France and Spain, but I believe these questions are still ripe for exploration.
 
 ## References
 
@@ -49,3 +56,5 @@ Diamond, Rebecca. "Housing supply elasticity and rent extraction by state and lo
 Feiveson, Laura. "General revenue sharing and public sector unions." *Journal of Public Economics* 125 (2015): 28-45. http://dx.doi.org/10.1016/j.jpubeco.2015.03.004.
 
 Brueckner, Jan K., and David Neumark. "Beaches, sunshine, and public sector pay: theory and evidence on amenities and rent extraction by government workers." *American Economic Journal: Economic Policy* 6, no. 2 (2014): 198-230. http://dx.doi.org/10.1257/pol.6.2.198.
+
+Garcıa-Santana, Manuel, and Marta Santamarıa. "Border Effects in Public procurement: the Aggregate Effects of Governments’ Home Bias." (2021).
