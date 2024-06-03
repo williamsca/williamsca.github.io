@@ -21,7 +21,7 @@ While cities in pro-union states spend about \\$0.78 of the extra dollar on wage
 
 While Feiveson emphasizes the implications of her results for macroeconomic policy and spending multipliers, I think the more interesting lesson is what we learn about the nature of local governments. Cities are sometimes viewed as firms whose shareholders are their residents (hence, a municipal *corporation*). When firms receive a dollar in windfall profits, we expect them to return it to their shareholders either via dividends or stock buybacks. The fact that cities *don't* distribute windfall gains to residents by lowering taxes tells us something about who their true shareholders were in the 1970s: public employees. Whether this is still true today, in the age of remote work and potentially more intense competition among cities for residents, is an open question.
 
-## Local Amenities
+## Amenities
 
 A place with great weather, beautiful beaches, or a natural harbor will have some residents even if the local government is corrupt or inefficient. Brueckner and Neumark (2014) push this idea a step further: can public employees actively exploit natural amenities to raise their wages without providing additional services?
 
