@@ -51,9 +51,9 @@ The city with inelastic housing supply can extract more revenue from residents. 
 
 Intuitively, residents in the inelastic city are compensated for the tax increase by lower housing rents. Even though taxes are high, they can afford them because their rents are low: someone already paid for their house to be built! In the elastic city, residents would have to pay the tax *and* pay for someone to build a new house for them, so they simply pack up and leave.
 
-So far, so good. But how do public sector unions fit it here? Diamond repeats the empirical exercise from Bruencker and Neumark, but she replaces the amenities variable with a measure of housing supply elasticity based on the availability of buildable land. 
+So far, so good. But how do public sector unions fit it here? Diamond repeats the empirical exercise from Bruencker and Neumark, but she replaces their amenities variables with a measure of housing supply elasticity based on the availability of buildable land from Saiz (2010).
 
-Here, Diamond provides us with a nice graph that I've copied below. On the x-axis is the normalized measure of land availability, which varies depending on the ruggedness of the terrain and the presence of water (Saiz 2010). On the y-axis is the (residualized) wage gap between public and private sector workers.
+Here, Diamond provides us with a nice graph that I've copied below. The x-axis shows a normalized measure of land availability that varies depending on the ruggedness of the terrain and the presence of water. The y-axis depicts the (residualized) wage gap between public and private sector workers.
 
 ![png]({{ site.baseurl }}/images/diamond-2017-figure1.png)
 
@@ -61,11 +61,11 @@ In states that don't allow public sector bargaining, the gap between public and 
 
 In states that allow public sector bargaining, however, there's a strong positive relationship between the two measures. California and Vermont have limited buildable land, and public employees there make only 5% less than private employees, while Iowa and Kansas have ample land and public employees there take a 20% pay cut relative to the private sector.
 
-While this is a striking result, there are some missing pieces to the model. Presumably, land availability should only affect housing supply after *positive* shocks: no matter whether there is a lake or a corn field next to my house, it will still depreciate at a similar rate. But rent extraction by the public sector would seem to be a negative shock, and hence the relevant part of the supply curve need not be related to land availability.
+While this is a striking result, there are some missing pieces to the model. Presumably, land availability should only affect housing supply after *positive* shocks: no matter whether there is a lake or a corn field next to my house, it will still depreciate at a similar rate. But rent extraction by the public sector would seem to be a negative shock, and hence the relevant part of the supply curve isn't obviously related to land availability.
 
 ## Some Parting Thoughts
 
-In each of these studies, government productivity is the elephant in the room. So what if public wages are high -- maybe they've earned that raise by working harder or longer! There would seem to be room here for a project that constructed an objective measure of government output that could be compared across jurisdictions and over time, something like wait times at the DMV or 911 response times. Teacher value-added could work, but I'm not aware of any such estimates that are available for multiple school districts.
+In each of these studies, government productivity is the elephant in the room. So what if public wages are high -- maybe they've earned that raise by working harder or longer! There seem to be room for a project that constructed an objective measure of government output. Ideally, something that could be compared across jurisdictions and over time, like wait times at the DMV or 911 response times. Teacher value-added could also work, but I'm not aware of any such estimates that are available for multiple school districts.
 
 Another way to get at public sector productivity is to look at government procurement. If two jurisdictions purchase the same inputs for different prices, it is safe to say that one is operating more efficiently than the other. There's ongoing research on this topic by Cailinn Slattery in the US and Garcia-Santana and Santamaria (2021) in France and Spain, but I believe these questions are still ripe for exploration.
 
