@@ -71,10 +71,10 @@ Another way to get at public sector productivity is to look at government procur
 
 ## References
 
-Diamond, Rebecca. "Housing supply elasticity and rent extraction by state and local governments." American Economic Journal: Economic Policy 9, no. 1 (2017): 74-111. https://doi.org/10.1257/pol.20150320.
+Diamond, Rebecca. "Housing supply elasticity and rent extraction by state and local governments." American Economic Journal: Economic Policy 9, no. 1 (2017): 74-111. [https://doi.org/10.1257/pol.20150320](https://doi.org/10.1257/pol.20150320).
 
-Feiveson, Laura. "General revenue sharing and public sector unions." *Journal of Public Economics* 125 (2015): 28-45. http://dx.doi.org/10.1016/j.jpubeco.2015.03.004.
+Feiveson, Laura. "General revenue sharing and public sector unions." *Journal of Public Economics* 125 (2015): 28-45. [http://dx.doi.org/10.1016/j.jpubeco.2015.03.004](http://dx.doi.org/10.1016/j.jpubeco.2015.03.004).
 
-Brueckner, Jan K., and David Neumark. "Beaches, sunshine, and public sector pay: theory and evidence on amenities and rent extraction by government workers." *American Economic Journal: Economic Policy* 6, no. 2 (2014): 198-230. http://dx.doi.org/10.1257/pol.6.2.198.
+Brueckner, Jan K., and David Neumark. "Beaches, sunshine, and public sector pay: theory and evidence on amenities and rent extraction by government workers." *American Economic Journal: Economic Policy* 6, no. 2 (2014): 198-230. [http://dx.doi.org/10.1257/pol.6.2.198](http://dx.doi.org/10.1257/pol.6.2.198).
 
-Garcıa-Santana, Manuel, and Marta Santamarıa. "Border Effects in Public procurement: the Aggregate Effects of Governments’ Home Bias." (2021).
+Garcıa-Santana, Manuel, and Marta Santamarıa. "Border Effects in Public procurement: the Aggregate Effects of Governments’ Home Bias." (2021). Working paper.
