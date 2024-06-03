@@ -13,11 +13,11 @@ Suppose a city government finds a dollar bill on the ground (or, equivalently, t
 
 Feiveson exploits geographic variation in federal transfers due to the allocation formulas in President Nixon's State and Local Fiscal Assistance Act of 1972. These transfers, which comprised roughly 3% of local budgets each year until 1986, were intended to move spending decisions "closer to the people." Congressional horse-trading led to a geographically-tiered formula that first allocated funds to state areas, then across county areas within the state, and only then across local governments in the county. The result: two similar cities could receive vastly different amounts of money depending on the state and county that they happened to be in.
 
-After showing that \$1 of transfers from this program lead to about \$1 of additional spending, Feiveson breaks down spending into four categories: wages, employment, capital outlays, and everything else. She then interacts the amount of federal transfers with an indicator for whether the state requires collective bargaining or not. The key results appear in Table 9 and are copied below:
+After showing that \\$1 of transfers from this program lead to about \\$1 of additional spending, Feiveson breaks down spending into four categories: wages, employment, capital outlays, and everything else. She then interacts the amount of federal transfers with an indicator for whether the state requires collective bargaining or not. The key results appear in Table 9 and are copied below:
 
 ![png]({{ site.baseurl }}/images/feiveson-2015-table9.png)
 
-While cities in pro-union states spend about \$0.78 of the extra dollar on wages, those in anti-union states spend merely \$0.14, with the rest going to employment and capital outlays.
+While cities in pro-union states spend about \\$0.78 of the extra dollar on wages, those in anti-union states spend merely \\$0.14, with the rest going to employment and capital outlays.
 
 While Feiveson emphasizes the implications of her results for macroeconomic policy and spending multipliers, I think the more interesting lesson is what we learn about the nature of local governments. Cities are sometimes viewed as firms whose shareholders are their residents (hence, a municipal *corporation*). When firms receive a dollar in windfall profits, we expect them to return it to their shareholders either via dividends or stock buybacks. The fact that cities *don't* distribute windfall gains to residents by lowering taxes tells us something about who their true shareholders were in the 1970s: public employees. Whether this is still true today, in the age of remote work and potentially more intense competition among cities for residents, is an open question.
 
