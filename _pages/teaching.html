@@ -7,6 +7,35 @@ author_profile: true
 
 {% include base_path %}
 
+<h1>Courses</h1>
+
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+<div class="course">
+  <h2>{{ post.title }}</h2>
+  <h3>{with { post.instructor }} - ({{ post.role }})</h3>
+  <p>{{ post.content | markdownify }}</p>
+</div>
 {% endfor %}
+
+<h1>Teaching History</h1>
+
+<table>
+  <tr>
+    <th>Semester</th>
+    {% for course in site.teaching %}
+    <th>{{ course.title }}</th>
+    {% endfor %}
+  </tr>
+  {% for semester in site.data.teaching_semesters %}
+  <tr>
+    <td>{{ semester.semester }}</td>
+    {% for course in site.teaching %}
+    <td>
+      {% if semester.courses contains course.title %}
+      X
+      {% endif %}
+    </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
