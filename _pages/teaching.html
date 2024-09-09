@@ -33,12 +33,12 @@ author_profile: true
 {% for post in site.teaching reversed %}
 <div class="course">
   <h2>{{ post.title }}</h2>
-  <em>with {{ post.instructor }} - {{ post.role }}</em>
+  <em>with {{ post.instructor }} | {{ post.role }}</em>
   <p>{{ post.content | markdownify }}</p>
 </div>
 {% endfor %}
 
-<h1>Teaching History</h1>
+<h1>History</h1>
 
 <table>
   <tr>
