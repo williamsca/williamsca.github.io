@@ -1,6 +1,6 @@
 ---
 title: "Principles of Microeconomics"
-instructor: "Ken Elzinga"
+instructor: "Ken Elzinga and Alex MacKay"
 role: "Head TA"
 collection: teaching
 type: "undergraduate"
