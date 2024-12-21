@@ -1,5 +1,5 @@
 ---
-title: This Year in Books
+title: 2022 in Books
 date: 2022-12-30
 categories: books
 ---

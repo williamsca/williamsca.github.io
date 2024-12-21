@@ -1,5 +1,5 @@
 ---
-title: This Year in Books
+title: 2023 Year in Books
 date: 2023-12-15
 categories: books
 ---
