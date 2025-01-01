@@ -1,7 +1,7 @@
 ---
 title: 2023 Year in Books
 date: 2023-12-15
-categories: books
+categories: Books
 ---
 
 In light of recent advances in AI, I spent this year thinking about the future of work and education. These books offer useful perspectives:

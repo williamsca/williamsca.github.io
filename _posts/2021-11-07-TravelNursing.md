@@ -1,6 +1,7 @@
 ---
 title: The Rise of Agency Nursing
 date: 2021-11-07
+categories: Economics
 tags: 
 - labor
 ---

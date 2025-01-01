@@ -1,7 +1,7 @@
 ---
 title: 2022 in Books
 date: 2022-12-30
-categories: books
+categories: Books
 ---
 
 It was a good year for reading: I have not read so many pages since my first semesters of college in 2015.
