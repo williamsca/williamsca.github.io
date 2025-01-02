@@ -5,7 +5,7 @@ categories: Economics
 tags: ['public finance', 'unions', 'monopoly']
 ---
 
-What role do public sector unions play in determining the local government spending priorities? In this essay, I discuss a trio of recent papers that shed light on this question. Each explores a different source of monopoly power that allows unions to extract rents in the form of higher wages.
+What role do public sector unions play in determining the local government spending priorities? I discuss a trio of recent papers that shed light on this question. Each explores a different source of monopoly power that allows organized public employees to extract rents in the form of higher wages.
 
 ## Transfers from Uncle Sam
 
