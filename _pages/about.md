@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a fourth-year PhD candidate in economics at the University of Virginia. My research interests include urban and public economics. You can find my CV [here](https://www.dropbox.com/s/1rhdbw4yjebvw27/Resume.pdf?dl=0), or you can read about my current projects below.
+I am a fourth-year PhD candidate in economics at the University of Virginia. My research interests include urban and public economics. You can find my CV [here](https://www.dropbox.com/scl/fi/h7sv4r71jubmgikuetzka/williams-cv-20250203.pdf?rlkey=g6re58juscvogx7v1fnfm96s6&st=kbu7dehk&dl=0), or you can read about my current projects below.
 
 ## Working Papers and Work in Progress
 ### The Long and Short of Residential Sorting: Evidence from School Bond Elections
