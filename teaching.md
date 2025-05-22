@@ -10,8 +10,7 @@ description: "Courses taught by Colin Williams at the University of Virginia"
       <p>
         <span class="marginnote">An introductory course in microeconomics with over 900 students and 20 TAs. I served as the Head TA for this course in Fall 2024.</span>
         <span class="papertitle"><b>Principles of Microeconomics</b></span>
-        <span class="coauthors"> for Professors <a href="https://kenelzinga.com/" target="_blank">Ken Elzinga</a> and Alex MacKay</span>    <span class="paperdetails">
-          University of Virginia | Fall 2022-2024
+        <span class="coauthors"> for Professors <a href="https://kenelzinga.com/" target="_blank">Ken Elzinga</a> and <a href="https://alexandermackay.org/" target="_blank">Alex MacKay</a></span> <span class="paperdetails">    University of Virginia | Fall 2022-2024
         </span>
       </p>
 
