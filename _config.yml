@@ -1,0 +1,52 @@
+# Site settings
+title: Colin Williams
+email: williams.colinandrew@gmail.com
+description: >-
+  Academic website of Colin Williams, PhD candidate in economics at the University of Virginia.
+  Research interests include urban and public economics.
+baseurl: ""
+url: "https://williamsca.github.io"
+twitter_username: platonicpicnic
+github_username: williamsca
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "teaching"
+    values:
+      layout: "teaching"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
