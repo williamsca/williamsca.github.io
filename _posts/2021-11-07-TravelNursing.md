@@ -25,7 +25,6 @@ Staff nurses have always had lower hourly wages than travel nurses, but in excha
 First, pay raises are difficult to take back. Hospitals are wagering that the market for nurses will eventually look more like it did in 2019 than it does now. COVID-19 may have caused older nurses to accelerate their timelines for retirement, but many would have quit their jobs in the next few years anyway. And enrollments at nursing schools at the BSN level grew in 2020, despite the complexities of training nurses during a pandemic. 
 
 Second, using travel nurses allows hospitals to price discriminate. Suppose -- in a gross simplification -- that there are two types of nurses. The first type doesn't care where they live, which shifts they work, or what kind of health insurance they have; perhaps they are young, childless, and unmarried. The second type is strongly attached to one place, prefers to work at particular times, and values having a 401k and comprehensive health insurance. By now, many of the first type have already quit to become travel nurses, while the second type has no intention of ever leaving. A hospital would be foolish to shower incentives to stay on precisely those nurses who have revealed that they are hesitant to leave.
- 
 
 ## References
 American Association of Colleges of Nursing. (2021, April 1). _Student Enrollment Surged in U.S. Schools of Nursing in 2020 Despite Challenges Presented by the Pandemic_. https://www.aacnnursing.org/News-Information/Press-Releases/View/ArticleId/24802/2020-survey-data-student-enrollment
@@ -33,3 +32,5 @@ American Association of Colleges of Nursing. (2021, April 1). _Student Enrollmen
 Keeling, Jeff. (2021, October 26). Ballad CEO, Congressional panel agree: Travel nurse industry huge part of health care labor challenge. _News Channel 11 & ABC Tri-Cities_. Retrieved from https://www.wjhl.com/news/local/ballad-ceo-congressional-panel-agree-travel-nurse-industry-huge-part-of-health-care-labor-challenge/
 
 Spetz, J. (2021), Changes in Registered Nurse Employment and Education Capacity during the COVID-19 Pandemic and the Risk of Future Shortages. Health Serv Res, 56: 47-47. https://doi.org/10.1111/1475-6773.13814
+ 
+

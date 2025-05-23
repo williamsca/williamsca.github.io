@@ -8,7 +8,7 @@ The financial crisis was a difficult time for cereal fans. The number of new pro
 Official inflation measures tend to overestimate the true inflation rate because it is difficult to account for the introduction of new products. If other markets exhibited the same trends as cereals, the upward bias in inflation is likely to have fallen in the years immediately after 2008.
 
 
-![png]({{ site.baseurl }}/images/20190709 Cereal Introductions by Year.png)
+![png]({{ site.baseurl }}/assets/images/20190709 Cereal Introductions by Year.png)
 
 ---
 

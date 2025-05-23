@@ -6,11 +6,11 @@ tags: ['Rome', 'epigraphy', 'mapping', 'pandas']
 
 Across the Empire, Romans inscribed the significant events of their lives on stone. A record of deaths, vows to the gods, and public decrees, these inscriptions reached their highest frequency around the year 200 A.D. The map below depicts the density of inscription writing in Italy and the surrounding provinces.
 
-![png]({{ site.baseurl }}/images/20190812 Roman Inscriptions Map.png)
+![png]({{ site.baseurl }}/assets/images/20190812 Roman Inscriptions Map.png)
 
 The highest concentration of writing comes from the immediate vicinity of Rome, but epigraphy extended to Greece, Germany, Northern Africa, and parts of Asia Minor as well.
 
-The data include all 76,652 inscriptions from the [Epigraphic Database Heidelberg](https://edh-www.adw.uni-heidelberg.de/home) that indicate where the inscription was found. Wilson (2014) suggests using these inscriptions as a proxy for Roman economic activity. This map is a first stab at exploring the data to that end.
+The data include all 76,652 inscriptions from the [Epigraphic Database Heidelberg](https://edh-www.adw.uni-heidelberg.de/home) that indicate where the inscription was found. Wilson<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Wilson, Andrew I. 2014. "Quantifying Roman Economic Performance by Means of Proxies : Pitfalls and Potential." Edited by Francois de Callatay, 147-67. Pragmateiai. Edipuglia. <https://ora.ox.ac.uk/objects/pubs:503490></span> suggests using these inscriptions as a proxy for Roman economic activity. This map is a first stab at exploring the data to that end.
 
 ---
 
@@ -97,9 +97,3 @@ fig.savefig(directory + "\\roman_inscriptions.png", dpi=400)
 
 ---
 
-## Sources:
-
-Wilson, Andrew I. 2014. "Quantifying Roman Economic Performance by Means of Proxies : Pitfalls and Potential." Edited by Francois de Callatay, 147-67. Pragmateiai. Edipuglia. <https://ora.ox.ac.uk/objects/pubs:503490>
-
-Cooley, Benjamin. "Let's make a map! Using Geopandas, Pandas, and Matplotlib to make a Choropleth map." Medium. 
-	<https://towardsdatascience.com/lets-make-a-map-using-geopandas-pandas-and-matplotlib-to-make-a-chloropleth-map-dddc31c1983d>

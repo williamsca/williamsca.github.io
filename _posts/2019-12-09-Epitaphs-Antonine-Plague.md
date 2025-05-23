@@ -12,10 +12,10 @@ mortality will be associated with more epitaphs. When the death rate
 is high, there will be relatively more subjects for epitaphs, and -- in a Malthusian
 economy -- their surviving relatives will have extra cash available
 for "luxury" purchases that exhibit their wealth, like high quality
-inscriptions.[^1]
+inscriptions.<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Similarly, the Black Death "concentrated wealth, often substantial family fortunes, in fewer and younger hands.... Even with a reduced population, the gross volume of luxury goods manufactured and sold rose." See Rout, David. "The Economic Impact of the Black Death". *EH.net Encyclopedia*, edited by Robert Whaples. July 20, 2008. <http://eh.net/encyclopedia/the-economic-impact-of-the-black-death/></span>
 
 The city of Rome suffered a series of epidemics in the latter half of
-the first century.[^2] Tacitus writes of Rome in 65 AD:[^3]
+the first century.<label for="sn-2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-2" class="margin-toggle"/><span class="sidenote">Harper, Kyle. "Database of Pestilence in the Roman Empire". *KyleHarper.net*, August 24, 2017, <https://www.kyleharper.net/uncategorized/database-of-pestilence-in-the-roman-empire/></span> Tacitus writes of Rome in 65 AD:<label for="sn-3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-3" class="margin-toggle"/><span class="sidenote">Tacitus Ann 16.13. From *Complete Works of Tacitus*. Alfred John Church. William Jackson Brodribb. Sara Bryant. edited for Perseus. New York: Random House, Inc. reprinted in 1942.</span>
 
 > a terrible plague was sweeping away all classes of human beings
 > without any such derangement of the atmosphere as to be visibly
@@ -27,7 +27,7 @@ the first century.[^2] Tacitus writes of Rome in 65 AD:[^3]
 > been sitting and shedding tears.
 
 Two further plagues followed in 77 AD and 79/80 AD. These epidemics were local to the city, and
-do not appear to have spread to the rest of Italy.[^4] By
+do not appear to have spread to the rest of Italy.<label for="sn-4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-4" class="margin-toggle"/><span class="sidenote">Harper, Kyle. "Database of Pestilence in the Roman Empire". Harper notes that "interregional events -- spreading beyond one province or so -- were rare before the outbreak of the Antonine Plague. It seems unlikely that pandemics occurred but went unattested."</span> By
 concentrating family estates in the hands of fewer individuals with
 many recently-deceased relatives, it is plausible that the plagues had a measurable effect on the
 demand for epitaphs. Consistent
@@ -35,7 +35,7 @@ with this story, the number of epitaphs dating to this period from Rome
 jumps sharply relative to those from the rest of the Italian
 peninsula:
 
-![png]({{ site.baseurl }}/images/20191220 Epitaphs by Year - Uniform (Rome & Italy).png)
+![png]({{ site.baseurl }}/assets/images/20191220 Epitaphs by Year - Uniform (Rome & Italy).png)
 
 The chart shows the total number of inscriptions dating to each half-century
 beginning in 50 BC until 450 AD, separately for the city of Rome and the rest of
@@ -52,7 +52,7 @@ in Rome, but that does not happen. Honorifics are the second most
 common type of inscription in Italy, and the number of honorifics
 decreases across all of Italy in 50 - 100 AD.
 
-![png]({{ site.baseurl }}/images/20191217 Honorifics by Year (Rome & Italy).png)
+![png]({{ site.baseurl }}/assets/images/20191217 Honorifics by Year (Rome & Italy).png)
 
 The pattern for building / dedicatory and votive inscriptions is
 similarly parallel between Rome and Italy during the 1st century.
@@ -101,7 +101,7 @@ nevertheless clarified my thinking about Roman epigraphy.
 
 The number of inscriptions produced in the Roman Empire peaks around the 2nd century AD. The increase is not driven by a single type of inscription; instead, all inscription types grow and shrink in absolute terms while maintaining similar proportions.
 
-![png]({{ site.baseurl }}/images/20191211 Roman Epitaphs by Year.png)
+![png]({{ site.baseurl }}/assets/images/20191211 Roman Epitaphs by Year.png)
 
 The top five types of inscription -- epitaph, votive, honorific,
 owner/artist, and building/dedicatory -- account for more than 90% of
@@ -138,8 +138,3 @@ twoway (bar tot year_bucket, fcolor(ltbluishgray) fintensity(inten60) lcolor(bla
 			 color(gs7) size(vsmall))
 ```
 
-## Sources
-[^1]: Similarly, the Black Death "concentrated wealth, often substantial family fortunes, in fewer and younger hands.... Even with a reduced population, the gross volume of luxury goods manufactured and sold rose." See Rout, David. "The Economic Impact of the Black Death". *EH.net Encyclopedia*, edited by Robert Whaples. July 20, 2008. <http://eh.net/encyclopedia/the-economic-impact-of-the-black-death/>
-[^2]: Harper, Kyle. "Database of Pestilence in the Roman Empire". *KyleHarper.net*, August 24, 2017, <https://www.kyleharper.net/uncategorized/database-of-pestilence-in-the-roman-empire/>
-[^3]: Tacitus Ann 16.13. From *Complete Works of Tacitus*. Alfred John Church. William Jackson Brodribb. Sara Bryant. edited for Perseus. New York: Random House, Inc. reprinted in 1942.
-[^4]: Harper, Kyle. "Database of Pestilence in the Roman Empire". Harper notes that "interregional events -- spreading beyond one province or so -- were rare before the outbreak of the Antonine Plague. It seems unlikely that pandemics occurred but went unattested."

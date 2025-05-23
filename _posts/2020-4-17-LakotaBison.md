@@ -7,7 +7,7 @@ tags: ['History', 'Differential Equations']
 
 When does violence end quickly, and when does it escalate into broader conflict? The competition between Native American tribes over bison hunting grounds during the mid-1800s provides an illustrative example. Lakotas, Crows, Omahas, Poncas, and other groups roamed the plains on horseback, seeking food for the winter and hides to sell to American traders. 
 
-Clashes between the tribes led to cycles of killings and retribution. The dynamic resulted from specific features of their environment. Pekka Hamalainen notes that the tribes "tended to avoid places where they where bound to run into enemies, and some of those places became buffer zones, no-man's lands people entered with caution if at all. That made them veritable animal preserves." These zones were "rich in game, intensely coveted, and hotly disputed."[^1] In short, conflict caused the disputed land to become even more valuable, thus increasing the potential pay-off to the tribe able to claim those lands for themselves.
+Clashes between the tribes led to cycles of killings and retribution. The dynamic resulted from specific features of their environment. Pekka Hamalainen notes that the tribes "tended to avoid places where they where bound to run into enemies, and some of those places became buffer zones, no-man's lands people entered with caution if at all. That made them veritable animal preserves." These zones were "rich in game, intensely coveted, and hotly disputed."<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Hamalainen, Pekka. *Lakota America*. New Haven: Yale University Press, 2019.</span> In short, conflict caused the disputed land to become even more valuable, thus increasing the potential pay-off to the tribe able to claim those lands for themselves.
 
 I present a toy model of the conflict over bison hunting grounds based
 on the Lotka-Volterra equations, commonly used to describe the
@@ -47,7 +47,7 @@ population attracts more and more hunters, who deplete the bison
 population and then switch to other hunting grounds while the bison
 herds recover. The populations continue to cycle between low and high.
 
-![png]({{ site.baseurl }}/images/20200422 Bison Dynamics (No Raiders).png) 
+![png]({{ site.baseurl }}/assets/images/20200422 Bison Dynamics (No Raiders).png) 
 
 When $\alpha = 1$, raiders affect the population dynamic. In a
 situation where bison are initially plentiful, the equilibrium
@@ -55,17 +55,17 @@ solution to the system is one with high levels of bison and raiders
 and relatively fewer hunters. The land is heavily contested and
 lightly hunted.
 
-![png]({{ site.baseurl }}/images/20200422 Bison Dynamics (Large Herds).png) 
+![png]({{ site.baseurl }}/assets/images/20200422 Bison Dynamics (Large Herds).png) 
 
 Similarly, high initial levels of raiders also cause the system to
 arrive at a high-conflict equilibrium, even when bison are initially scarce.
 
-![png]({{ site.baseurl }}/images/20200422 Bison Dynamics (Many Raiders).png) 
+![png]({{ site.baseurl }}/assets/images/20200422 Bison Dynamics (Many Raiders).png) 
 
 Finally, low initial numbers of raiders and bison can put the region in a peaceful
 equilibrium with many hunters picking over thinned-out herds.
 
-![png]({{ site.baseurl }}/images/20200422 Bison Dynamics (Low-Conflict).png)
+![png]({{ site.baseurl }}/assets/images/20200422 Bison Dynamics (Low-Conflict).png)
 
 ## Discussion
 Although the high-conflict equilibrium is not in anyone's interest but
@@ -139,5 +139,3 @@ plt.legend(loc='best')
 plt.show()
 ```
 
-## Sources
-[^1]: Hamalainen, Pekka. *Lakota America*. New Haven: Yale University Press, 2019.

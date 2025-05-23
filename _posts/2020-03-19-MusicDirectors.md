@@ -27,7 +27,7 @@ position between 1920 and 1970 spent an average of 6.4 years in the
 position, while those departing from 1970 to 2020 had clocked in 10.5
 years. 
 
-![png]({{ site.baseurl }}/images/20200319 A Century of Tenures.png)
+![png]({{ site.baseurl }}/assets/images/20200319 A Century of Tenures.png)
 
 It's not clear whether this trend is because the nature of the position has
 changed, or whether broader social and demographic forces have aligned to reduce churn in

@@ -8,7 +8,7 @@ Try saying that five times fast.
 
 The gif below illustrates the spread of epigraphic writing across the empire. In 100BC, almost 40% of inscriptions come from Rome itself, but by 200 AD that share falls to below 10%. In general, the distribution shifts away from Rome, but unevenly. 
 
-![png]({{ site.baseurl }}/images/20190814 EpigraphySpread.gif)
+![png]({{ site.baseurl }}/assets/images/20190814 EpigraphySpread.gif)
 
 The concentration of inscriptions between 200 and 250 miles from Rome come primarily from the province of [Dalmatia](https://en.wikipedia.org/wiki/Dalmatia_(Roman_province)), a Balkan region particularly well-documented in the EDH dataset.
 
@@ -28,7 +28,7 @@ Why do people employ these mediums? What determines the content of their writing
 Some observations:
 * The risk that someone finds your statement offensive increases with the size and heterogeneity of your audience. My sense is that people posted more on Facebook when their friends list consisted of their true-to-life *friends*, and not their extended family, coworkers, and old HS teachers.
 
-* Wilson (2014) suggests that epigraphy was driven by "local political competition between elites." If this is the case, then we should observe more epigraphic writing during periods of local political turbulence when newcomers attempt to dislodge incumbents. The key word is local. Elites used epigraphic writing to improve their standing *within* the Roman political system, but existential threats to that system would lower the expected value of local political capital.
+* Wilson<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Wilson, Andrew I. 2014. "Quantifying Roman Economic Performance by Means of Proxies : Pitfalls and Potential." Edited by Francois de Callatay, 147-67. Pragmateiai. Edipuglia. <https://ora.ox.ac.uk/objects/pubs:503490></span> suggests that epigraphy was driven by "local political competition between elites." If this is the case, then we should observe more epigraphic writing during periods of local political turbulence when newcomers attempt to dislodge incumbents. The key word is local. Elites used epigraphic writing to improve their standing *within* the Roman political system, but existential threats to that system would lower the expected value of local political capital.
 
 ---
 

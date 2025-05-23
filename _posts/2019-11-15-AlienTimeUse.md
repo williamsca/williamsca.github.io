@@ -9,7 +9,7 @@ categories: Stories
 
 Welcome, everyone, to our little conference! It has been a terrific year for the field of Human Studies, and I am very much looking forward to the spirit of intellectual adventure and sublime humility that we have all felt at conferences past, standing as we are at the base of a reservoir of knowledge so deep that our grandchildren's grandchildren may well consider ours a rich and unexplored topic, a field that they may find worthy enough to devote their lives to, as have each of us. They will regard us as pioneers, trailblazers, and our names will adorn the theories they debate.
 
-Some of you may be thinking that "little" sends the wrong message. There are some who claim that an academic discipline is only as big as its pretensions, that we ought to "fake it until we make it" ([^1]) to secure ourselves the prestige of our fellows and the funding we require.
+Some of you may be thinking that "little" sends the wrong message. There are some who claim that an academic discipline is only as big as its pretensions, that we ought to "fake it until we make it" (<label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"/><span class="sidenote">Throughout the text, I take certain liberties with the alien idiom. The phrase here means something like "to inflate our air-sacs beyond what is necessary for the journey before us."</span>) to secure ourselves the prestige of our fellows and the funding we require.
 
 But I must be honest with you all: we are less a conference that a coterie. Since a flurry of interest at the release of the trove of sensor data captured by our deep-space probe, the scientists on this planet have left Human Studies for topics more amenable to their methods.
 
@@ -31,4 +31,3 @@ Many theories purport to explain this strange phenomena. One camp holds that it 
 
 It is our privilege, and our burden, to ponder this mystery today. Let us begin!
 
-[^1]: Throughout the text, I take certain liberties with the alien idiom. The phrase here means something like "to inflate our air-sacs beyond what is necessary for the journey before us."
