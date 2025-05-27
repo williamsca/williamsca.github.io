@@ -13,16 +13,29 @@ section .post-list {
 }
 
 .post-item {
-  margin-bottom: 3rem;
+  margin-bottom: 0rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #eee;
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
 }
 
 .post-item:last-child {
   border-bottom: none;
+}
+
+.post-link {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  margin: -1rem;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.post-link:hover {
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .post-content {
@@ -31,8 +44,8 @@ section .post-list {
 
 .post-image {
   flex-shrink: 0;
-  width: 120px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   border-radius: 4px;
   overflow: hidden;
   order: 2;
@@ -56,11 +69,6 @@ section .post-list {
 .post-title a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
-}
-
-.post-title a:hover {
-  color: #666;
 }
 
 .post-excerpt {
@@ -75,12 +83,12 @@ section .post-list {
     border-bottom-color: #333;
   }
   
-  .post-excerpt {
-    color: #aaa;
+  .post-link:hover {
+    background-color: rgba(255, 255, 255, 0.03);
   }
   
-  .post-title a:hover {
-    color: #bbb;
+  .post-excerpt {
+    color: #aaa;
   }
 }
 
@@ -89,11 +97,9 @@ section .post-list {
     width: 100%;
   }
   
-  .post-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
+  .post-link {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
   }
   
   .post-image {
@@ -108,24 +114,21 @@ section .post-list {
 }
 </style>
 
-<section>
 <div class="post-list">
 {% for post in site.posts %}
   <article class="post-item">
-    <div class="post-content">
-      <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h2>
+    <a href="{{ post.url | relative_url }}" class="post-link">
+      <div class="post-content">
+        <h2 class="post-title">{{ post.title | escape }}</h2>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+      </div>
       
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
-    </div>
-    
-    {% if post.image %}
-    <div class="post-image">
-      <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
-    </div>
-    {% endif %}
+      {% if post.image %}
+      <div class="post-image">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+      </div>
+      {% endif %}
+    </a>
   </article>
 {% endfor %}
 </div>
-</section>
