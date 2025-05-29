@@ -5,7 +5,7 @@ tags: ['Rome', 'Epigraphy', 'mapping', 'economics']
 image: /assets/images/epigraphy.jpg
 ---
 
-## What Deserves to be Written
+## What Deserves to be Written?
 
 *True glory consists in doing what deserves to be written; in writing what deserves to be read.*  
 — Pliny the Elder
