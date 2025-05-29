@@ -2,7 +2,7 @@
 title: Lakota Hunting Dynamics
 categories: Economics
 mathjax: true
-tags: ['History', 'Differential Equations']
+tags: ['python']
 ---
 
 When does violence end quickly, and when does it escalate into broader conflict? The competition between Native American tribes over bison hunting grounds during the mid-1800s provides an illustrative example. Lakotas, Crows, Omahas, Poncas, and other groups roamed the plains on horseback, seeking food for the winter and hides to sell to American traders. 

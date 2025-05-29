@@ -2,6 +2,7 @@
 title: The Great Recession, Cereal Edition
 categories: Economics
 image: /assets/images/reeses_puffs.jpg
+tags: ['data', 'Stata']
 ---
 
 The financial crisis was a difficult time for cereal fans. The number of new products introduced in the breakfast cereal market fell from 60 to 20 in the three years after 2008.

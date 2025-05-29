@@ -1,7 +1,7 @@
 ---
 title: Trends in Roman Epigraphy
 categories: Economics
-tags: ['Rome', 'epigraphy']
+tags: ['data', 'stata', 'economic history']
 ---
 
 The demand for epitaphs ought to depend on several

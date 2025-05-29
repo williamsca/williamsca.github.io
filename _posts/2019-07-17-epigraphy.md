@@ -1,7 +1,7 @@
 ---
 title: The Geography and Evolution of Roman Public Writing
 categories: Economics
-tags: ['Rome', 'Epigraphy', 'mapping', 'economics']
+tags: ['economic history', 'data', 'Stata', 'python']
 image: /assets/images/epigraphy.jpg
 ---
 

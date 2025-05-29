@@ -1,7 +1,7 @@
 ---
 title: Build More by Compensating Current Residents
 categories: Economics
-tags: ['zoning', 'parking', 'Coase Theorem']
+tags: ['zoning', 'housing']
 ---
 
 Current residents bear the costs of new development. Those costs take many forms -- crowded schools, congested freeways, crime, ugly high-rises, spillover parking on residential streets -- but they all decrease property values. Accordingly, homeowners and landlords are often vocal opponents of new development, and seek to impose burdensome or prohibitive costs on developers through zoning regulations.

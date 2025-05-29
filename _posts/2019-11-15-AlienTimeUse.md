@@ -1,6 +1,6 @@
 ---
 title: Shooting the Daylight
-categories: Stories
+tags: ['stories']
 ---
 
 ### 33rd Symposium on Time Organization Among Earth-Dwellers (*Agna*, Galactic Year 917) ###
