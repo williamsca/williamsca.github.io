@@ -1,6 +1,6 @@
 ---
 title: Price Bunching in DC
-categories: Economics
+tags: ['data', 'housing']
 ---
 
 A first look at property transactions in DC suggests that something unusual is happening at $400,000.
