@@ -12,6 +12,7 @@ description: "Public goods produced by Colin"
         <span class="papertitle"><b>Imputing Mobile Home Loans in HMDA</b></span>
         <span class="paperdetails"> <a href="https://doi.org/10.5281/zenodo.16848727" target="_blank">Data</a> | <a href="https://github.com/williamsca/manufactured-hmda" target="_blank">Replication</a>
         </span>
-        <img src="{{ site.baseurl }}/assets/images/originations_by_year.png" alt="Originations by Year" />    </p>
+        <img src="{{ site.baseurl }}/assets/images/originations_by_year.png" alt="Originations by Year" style="margin-top: -80px;" />
+      </p>
 
   </section>
