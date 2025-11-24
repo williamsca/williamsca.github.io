@@ -121,15 +121,6 @@ article {
     padding: 5rem 0rem;
 }
 
-section p {
-    padding-bottom: 2em;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-section p:last-of-type {
-    border-bottom: none;
-}
-
 section {
     padding-top: 1rem;
 }
