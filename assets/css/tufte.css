@@ -41,7 +41,7 @@
 
 /* Tufte CSS styles */
 html {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 body {
@@ -177,11 +177,16 @@ p {
 .paperdetails {
     font-style: et-book, roman, serif;
     margin-top: 0rem;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
     display: block;
     line-height: 1.1;
     text-indent: -1rem;
     margin-left: 1rem;
+}
+
+.paperimage {
+    display: block;
+    min-height: 250px;
 }
 
 /* Chapter Epigraphs */
