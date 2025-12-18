@@ -41,14 +41,15 @@
 
 /* Tufte CSS styles */
 html {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 body {
     width: 87.5%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 12.5%;
+    padding-left: 6.25%;
+    padding-right: 6.25%;
     font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     background-color: #fffff8;
     color: #111;
@@ -73,12 +74,14 @@ h1 {
 }
 
 h2 {
+    margin-left: 12.5%;
     font-style: italic;
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
     font-size: 2.2rem;
     line-height: 1;
+
 }
 
 h3 {
@@ -96,8 +99,20 @@ hr {
     width: 55%;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin: 1em 0 1em 12.5%;
     padding: 0;
+}
+
+hr.paper-divider {
+    border-top: 1px solid #e8e8e8;
+    width: 55%;
+    margin: 2rem 0 2rem 12.5%;
+}
+
+@media (prefers-color-scheme: dark) {
+    hr.paper-divider {
+        border-top-color: #2a2a2a;
+    }
 }
 
 p.subtitle {
@@ -118,7 +133,7 @@ p.subtitle {
 }
 
 article {
-    padding: 5rem 0rem;
+    padding: 0;
 }
 
 section {
@@ -189,6 +204,142 @@ p {
     min-height: 250px;
 }
 
+/* ————————————————————————————————————————
+   Paper Entry Styles
+   ———————————————————————————————————————— */
+
+.paper-entry {
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.paper-title {
+    font-family: et-book, libertine, serif;
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: inline;
+}
+
+.paper-status {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-family: et-book, libertine, serif;
+    font-weight: normal;
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    border: 1px solid #999;
+    color: #666;
+    border-radius: 1em;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.paper-coauthors {
+    font-family: et-book, libertine, serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.paper-meta {
+    font-family: et-book, libertine, serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.paper-journal {
+    font-style: italic;
+}
+
+.paper-summary {
+    font-family: et-book, libertine, serif;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+    margin-left: 1rem;
+}
+
+.paper-links {
+    font-family: et-book, libertine, serif;
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+}
+
+.paper-links a {
+    color: #555;
+    text-decoration: underline;
+    text-decoration-color: #ccc;
+    text-underline-offset: 0.15em;
+    position: relative;
+}
+
+.paper-links a:hover {
+    text-decoration-color: currentColor;
+}
+
+.paper-links .link-separator {
+    margin: 0 0.5rem;
+    color: #888;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .paper-meta {
+        color: #aaa;
+    }
+
+    .paper-status {
+        background-color: transparent;
+        border-color: #555;
+        color: #999;
+    }
+
+    .paper-summary {
+        color: #ccc;
+    }
+
+    .paper-links a {
+        color: #aaa;
+        text-decoration-color: #444;
+    }
+
+    .paper-links .link-separator {
+        color: #666;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 760px) {
+    .paper-title {
+        font-size: 1.4rem;
+    }
+
+    .paper-status {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .paper-coauthors,
+    .paper-meta,
+    .paper-summary {
+        font-size: 1.1rem;
+    }
+
+    .paper-links {
+        font-size: 1rem;
+    }
+}
+
 /* Chapter Epigraphs */
 div.epigraph {
     margin: 5em 0;
@@ -220,26 +371,31 @@ blockquote {
 
 blockquote p {
     width: 55%;
+    margin-left: 12.5%;
     margin-right: 40px;
 }
 
 blockquote footer {
     width: 55%;
+    margin-left: 12.5%;
     font-size: 1.1rem;
     text-align: right;
 }
 
 section>p,
 section>footer,
-section>table {
+section>table,
+section>article {
     width: 55%;
+    margin-left: 12.5%;
 }
 
-/* 50 + 5 == 55, to be the same width as paragraph */
+/* Adjusted to match new paragraph width */
 section>dl,
 section>ol,
 section>ul {
     width: 50%;
+    margin-left: 12.5%;
     -webkit-padding-start: 5%;
 }
 
@@ -257,7 +413,7 @@ figure {
     max-width: 55%;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
+    margin: 0 0 3em 12.5%;
 }
 
 figcaption {
@@ -434,7 +590,8 @@ label.margin-toggle:not(.sidenote-number) {
     hr,
     section>p,
     section>footer,
-    section>table {
+    section>table,
+    section>article {
         width: 100%;
     }
 
@@ -534,8 +691,10 @@ body {
     margin: 0 auto;
     width: 87.5%;
     /* Same as body width */
-    padding-left: 12.5%;
+    padding-left: 6.25%;
     /* Same as body padding-left */
+    padding-right: 6.25%;
+    /* Same as body padding-right */
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
 }
@@ -614,5 +773,52 @@ body {
         /* reset and add spacing via block flow   */
         margin-right: 1.4rem;
         display: inline-block;
+    }
+}
+
+/* ————————————————————————————————————————
+   Margin Note Image Enhancements
+   Add to your tufte.css or a separate stylesheet
+   ———————————————————————————————————————— */
+
+/* Images within margin notes */
+.marginnote img,
+.sidenote img {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+/* Headshot-specific styling (circular crop, optional) */
+.marginnote img[alt="Colin Williams"] {
+    /* Uncomment for circular headshot:
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    */
+    max-width: 80%;
+}
+
+/* Paper figures in margins - subtle border for charts/graphs */
+.paper-summary .marginnote img {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .paper-summary .marginnote img {
+        border-color: #333;
+    }
+}
+
+/* Mobile: margin images display inline with content */
+@media (max-width: 760px) {
+
+    .marginnote img,
+    .sidenote img {
+        max-width: 80%;
+        margin: 0.5rem auto;
     }
 }

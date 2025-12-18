@@ -18,6 +18,8 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  papers:
+    output: false
 
 # Defaults
 defaults:

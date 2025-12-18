@@ -1,0 +1,25 @@
+{% comment %}
+Tufte-style margin note include for Jekyll.
+
+Usage:
+{% include marginnote.html id="unique-id" content="Your text here" %}
+
+With image:
+{% include marginnote.html id="unique-id" image="/path/to/image.jpg" alt="Description" content="Caption text" %}
+
+Parameters:
+- id: (required) Unique identifier for mobile toggle
+- content: Text content for the margin note
+- image: Optional image path
+- alt: Alt text for image (defaults to empty)
+{% endcomment -%}
+<label for="mn-{{ include.id }}" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="mn-{{ include.id }}" class="margin-toggle" />
+<span class="marginnote">
+    {%- if include.image -%}
+    <img src="{{ include.image }}" alt="{{ include.alt | default: '' }}" />
+    {%- endif -%}
+    {%- if include.content -%}
+    {{ include.content }}
+    {%- endif -%}
+</span>
