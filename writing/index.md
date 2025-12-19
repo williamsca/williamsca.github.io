@@ -1,16 +1,20 @@
 ---
-layout: page
+layout: default
 title: "Writing"
 permalink: /writing/
 description: "Blog posts and essays by Colin Williams"
 ---
 
 <style>
-section .post-list {
+.post-list {
   width: 55%;
-  margin: 0;
+  margin-left: 12.5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
   padding: 0;
 }
+
 
 .post-item {
   margin-bottom: 0rem;
@@ -95,6 +99,7 @@ section .post-list {
 @media (max-width: 760px) {
   section .post-list {
     width: 100%;
+    margin-left: 0;
   }
   
   .post-link {
@@ -113,6 +118,8 @@ section .post-list {
   }
 }
 </style>
+
+<h2>Writing</h2>
 
 <div class="post-list">
 {% for post in site.posts %}

@@ -593,6 +593,7 @@ label.margin-toggle:not(.sidenote-number) {
     section>table,
     section>article {
         width: 100%;
+        margin-left: 0;
     }
 
     pre>code {
@@ -603,10 +604,12 @@ label.margin-toggle:not(.sidenote-number) {
     section>ol,
     section>ul {
         width: 90%;
+        margin-left: 0;
     }
 
     figure {
         max-width: 90%;
+        margin-left: 0;
     }
 
     figcaption,
@@ -623,6 +626,7 @@ label.margin-toggle:not(.sidenote-number) {
     blockquote p,
     blockquote footer {
         width: 100%;
+        margin-left: 0;
     }
 
     label.margin-toggle:not(.sidenote-number) {
