@@ -103,17 +103,6 @@ hr {
     padding: 0;
 }
 
-hr.paper-divider {
-    border-top: 1px solid #e8e8e8;
-    width: 55%;
-    margin: 2rem 0 2rem 12.5%;
-}
-
-@media (prefers-color-scheme: dark) {
-    hr.paper-divider {
-        border-top-color: #2a2a2a;
-    }
-}
 
 p.subtitle {
     font-style: italic;
@@ -205,15 +194,17 @@ p {
 }
 
 /* ————————————————————————————————————————
-   Paper Entry Styles
+   Entry Styles (Papers & Posts)
    ———————————————————————————————————————— */
 
-.paper-entry {
+.paper-entry,
+.post-entry {
     margin-bottom: 2rem;
     margin-top: 3rem;
 }
 
-.paper-title {
+.paper-title,
+.post-title {
     font-family: et-book, libertine, serif;
     font-weight: bold;
     font-size: 1.75rem;
@@ -246,7 +237,8 @@ p {
     margin-bottom: 0.3rem;
 }
 
-.paper-meta {
+.paper-meta,
+.post-meta {
     font-family: et-book, libertine, serif;
     font-size: 1.2rem;
     line-height: 1.4;
@@ -259,7 +251,8 @@ p {
     font-style: italic;
 }
 
-.paper-summary {
+.paper-summary,
+.post-excerpt {
     font-family: et-book, libertine, serif;
     font-size: 1.3rem;
     line-height: 1.2;
@@ -269,13 +262,15 @@ p {
     margin-left: 1rem;
 }
 
-.paper-links {
+.paper-links,
+.post-links {
     font-family: et-book, libertine, serif;
     font-size: 1.1rem;
     margin-top: 0.8rem;
 }
 
-.paper-links a {
+.paper-links a,
+.post-links a {
     color: #555;
     text-decoration: underline;
     text-decoration-color: #ccc;
@@ -283,18 +278,21 @@ p {
     position: relative;
 }
 
-.paper-links a:hover {
+.paper-links a:hover,
+.post-links a:hover {
     text-decoration-color: currentColor;
 }
 
-.paper-links .link-separator {
+.paper-links .link-separator,
+.post-links .link-separator {
     margin: 0 0.5rem;
     color: #888;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-    .paper-meta {
+    .paper-meta,
+    .post-meta {
         color: #aaa;
     }
 
@@ -304,23 +302,27 @@ p {
         color: #999;
     }
 
-    .paper-summary {
+    .paper-summary,
+    .post-excerpt {
         color: #ccc;
     }
 
-    .paper-links a {
+    .paper-links a,
+    .post-links a {
         color: #aaa;
         text-decoration-color: #444;
     }
 
-    .paper-links .link-separator {
+    .paper-links .link-separator,
+    .post-links .link-separator {
         color: #666;
     }
 }
 
 /* Mobile responsive */
 @media (max-width: 760px) {
-    .paper-title {
+    .paper-title,
+    .post-title {
         font-size: 1.4rem;
     }
 
@@ -331,12 +333,71 @@ p {
 
     .paper-coauthors,
     .paper-meta,
-    .paper-summary {
+    .post-meta,
+    .paper-summary,
+    .post-excerpt {
         font-size: 1.1rem;
     }
 
-    .paper-links {
+    .paper-links,
+    .post-links {
         font-size: 1rem;
+    }
+}
+
+/* Post-specific: clickable entries with hover effect */
+.post-list {
+    width: 55%;
+    margin-left: 12.5%;
+}
+
+.post-entry-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.post-entry-wrapper:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    .post-entry-wrapper:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+    }
+}
+
+/* Entry dividers for both papers and posts */
+.entry-divider {
+    border-top: 1px solid #e8e8e8;
+    width: 55%;
+    margin: 2rem 0 2rem 12.5%;
+}
+
+/* When inside post-list, no left margin needed (parent already has it) */
+.post-list .entry-divider {
+    margin-left: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .entry-divider {
+        border-top-color: #2a2a2a;
+    }
+}
+
+@media (max-width: 760px) {
+    .post-list {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .entry-divider {
+        width: 100%;
+        margin-left: 0;
     }
 }
 

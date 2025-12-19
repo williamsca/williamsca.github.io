@@ -71,7 +71,7 @@ description: "Research"
     </article>
 
     {% unless forloop.last %}
-    <hr class="paper-divider">
+    <hr class="entry-divider">
     {% endunless %}
     {% endfor %}
 
