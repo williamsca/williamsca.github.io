@@ -1,33 +1,9 @@
 ---
 layout: default
-title: ""
-permalink: /
-description: "Colin Williams, economics researcher at the University of Virginia focusing on urban and public
-economics."
-headshot: "/assets/images/profile.jpg"
+title: "Research"
+permalink: /research/
+description: "Research"
 ---
-
-<section>
-    <p>{% include marginnote.html id="headshot" image=page.headshot alt="Colin Williams" %}
-    <h2> Research </h2></p>
-
-    <p>
-        I am a fifth-year PhD candidate in Economics at the University of Virginia.</p>
-        
-    <p>My research in urban and public economics examines how state and federal policies affect local governments and the
-    interactions between local fiscal and land use policies.</p>
-        
-        <p>You can find my CV
-        <a
-            href="https://www.dropbox.com/scl/fi/iypsgd14hola8uysqjui8/williams-cv-20250812.pdf?rlkey=xi18vt16qldbj7tuuzitu9uri&st=ceuo2mz3&dl=0">here</a>,
-        or you can read about my current projects below.
-    </p>
-
-    <p>I am available by email at <a href="mailto:williams.colinandrew@gmail.com">williams.colinandrew@gmail.com</a>.
-    </p>
-</section>
-
-<hr>
 
 <section>
     <h2> Selected Research </h2>
@@ -104,3 +80,4 @@ headshot: "/assets/images/profile.jpg"
         </p>
     </section>
 </section>
+

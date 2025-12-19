@@ -9,7 +9,7 @@ arxiv:
 github:
 slides:
 slides_label:
-image:
+figure:
 summary: "We use granular geolocation data and multiple empirical strategies to document that congestion is a pervasive feature of brick-and-mortar retail. Retailers do not adjust prices to reduce congestion. Instead, they invest in extra capacity in order to meet demand during the busiest periods, furthering urban sprawl."
 ---
 
