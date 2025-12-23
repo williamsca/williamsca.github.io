@@ -71,22 +71,18 @@ h1 {
     margin-bottom: 1.5rem;
     font-size: 3.2rem;
     line-height: 1;
-    margin-left: 12.5%;
 }
 
 h2 {
-    margin-left: 12.5%;
     font-style: italic;
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
     font-size: 2.2rem;
     line-height: 1;
-
 }
 
 h3 {
-    margin-left: 12.5%;
     font-style: italic;
     font-weight: 400;
     font-size: 1.7rem;
@@ -453,6 +449,13 @@ section>article {
     margin-left: 12.5%;
 }
 
+section>h1,
+section>h2,
+section>h3 {
+    width: 55%;
+    margin-left: 12.5%;
+}
+
 /* Adjusted to match new paragraph width */
 section>dl,
 section>ol,
@@ -654,7 +657,10 @@ label.margin-toggle:not(.sidenote-number) {
     section>p,
     section>footer,
     section>table,
-    section>article {
+    section>article,
+    section>h1,
+    section>h2,
+    section>h3 {
         width: 100%;
         margin-left: 0;
     }
