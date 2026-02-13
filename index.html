@@ -60,26 +60,31 @@ headshot: "/assets/images/profile.jpg"
         {% endif %}
 
         <!-- Minimal text links -->
-        {% if paper.slides or paper.arxiv or paper.github or paper.html %}
+        {% if paper.dropbox or paper.slides or paper.arxiv or paper.github or paper.html %}
         <div class="paper-links">
+            {% if paper.dropbox %}
+            <a href="{{ paper.dropbox }}" target="_blank" rel="noopener">Paper</a>
+            {% endif %}
+
             {% if paper.slides %}
+            {% if paper.dropbox %}<span class="link-separator">&middot;</span>{% endif %}
             <a href="{{ paper.slides }}" target="_blank" rel="noopener">
                 {% if paper.slides_label %}{{ paper.slides_label }}{% else %}Slides{% endif %}
             </a>
             {% endif %}
-        
+
             {% if paper.arxiv %}
-            {% if paper.slides %}<span class="link-separator">&middot;</span>{% endif %}
+            {% if paper.dropbox or paper.slides %}<span class="link-separator">&middot;</span>{% endif %}
             <a href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
             {% endif %}
-        
+
             {% if paper.github %}
-            {% if paper.slides or paper.arxiv %}<span class="link-separator">&middot;</span>{% endif %}
+            {% if paper.dropbox or paper.slides or paper.arxiv %}<span class="link-separator">&middot;</span>{% endif %}
             <a href="{{ paper.github }}" target="_blank" rel="noopener">GitHub</a>
             {% endif %}
-        
+
             {% if paper.html %}
-            {% if paper.slides or paper.arxiv or paper.github %}<span class="link-separator">&middot;</span>{% endif %}
+            {% if paper.dropbox or paper.slides or paper.arxiv or paper.github %}<span class="link-separator">&middot;</span>{% endif %}
             <a href="{{ paper.html }}" target="_blank" rel="noopener">HTML</a>
             {% endif %}
         </div>
