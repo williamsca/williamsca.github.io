@@ -399,6 +399,157 @@ p {
     }
 }
 
+/* CV page */
+.cv-page {
+    width: 55%;
+    margin-left: 12.5%;
+}
+
+.cv-button-row {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 3rem;
+}
+
+.cv-download-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #222;
+    border-radius: 999px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    background: #f4f1e8;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cv-download-button:hover {
+    background: #ece6d7;
+    transform: translateY(-1px);
+}
+
+.cv-section {
+    padding-top: 0;
+    margin-bottom: 2.5rem;
+}
+
+.cv-section > h2,
+.cv-section > p,
+.cv-section > ul,
+.cv-section > article {
+    width: 100%;
+    margin-left: 0;
+}
+
+.cv-list,
+.cv-year-list {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.cv-row,
+.cv-year-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: baseline;
+    margin-bottom: 0.7rem;
+}
+
+.cv-row-main,
+.cv-year-items {
+    flex: 1 1 auto;
+}
+
+.cv-row-meta,
+.cv-year-label {
+    flex: 0 0 auto;
+    color: #555;
+    white-space: nowrap;
+}
+
+.cv-inline-list,
+.cv-entry-title,
+.cv-entry-meta,
+.cv-entry-summary,
+.cv-legend,
+.cv-reference span {
+    margin-left: 0;
+}
+
+.cv-entry {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1.2rem;
+}
+
+.cv-divider {
+    width: 100%;
+    margin: 0 0 2rem 0;
+}
+
+.cv-entry-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.cv-entry-meta,
+.cv-legend {
+    font-size: 1.15rem;
+    color: #555;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.cv-entry-summary {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.4rem;
+}
+
+.cv-reference {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .cv-download-button {
+        border-color: #aaa;
+        background: #202020;
+    }
+
+    .cv-download-button:hover {
+        background: #2b2b2b;
+    }
+
+    .cv-row-meta,
+    .cv-year-label,
+    .cv-entry-meta,
+    .cv-legend {
+        color: #aaa;
+    }
+}
+
+@media (max-width: 760px) {
+    .cv-page {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .cv-row,
+    .cv-year-row {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .cv-row-meta,
+    .cv-year-label {
+        white-space: normal;
+    }
+}
+
 /* Chapter Epigraphs */
 div.epigraph {
     margin: 5em 0;

@@ -1,0 +1,44 @@
+name: Colin Williams
+department: Department of Economics
+institution: University of Virginia
+address_lines:
+  - PO Box 400182
+  - Charlottesville, VA 22904-4182
+email: chv7bg@virginia.edu
+email_display: chv7bg@virginia.edu
+website: https://williamsca.github.io/
+phone: "(316) 258-2384"
+citizenship: USA
+pdf_url: https://www.dropbox.com/scl/fi/iypsgd14hola8uysqjui8/williams-cv-20250812.pdf?rlkey=xi18vt16qldbj7tuuzitu9uri&st=ceuo2mz3&dl=0
+
+education:
+  - degree: Ph.D. Candidate, Economics
+    institution: University of Virginia
+    years: 2021-present
+  - degree: B.A. cum laude, Economics and Mathematics
+    institution: Williams College
+    years: 2018
+
+fields_of_interest:
+  - Urban and Spatial Economics
+  - Public Economics
+  - Trade
+
+awards:
+  - title: Humane Studies Fellowship
+    institution: Institute for Humane Studies
+    amount: "$3,500"
+    year: 2025
+  - title: Center for Real Estate and the Built Environment
+    institution: University of Virginia
+    amount: "$4,000"
+    year: 2025
+  - title: Marshall Jevons Research Fund Award
+    institution: University of Virginia
+    year: 2024
+  - title: Snavely Award for Outstanding Summer Paper
+    institution: University of Virginia
+    year: 2023
+
+references: []
+references_note: Available upon request.

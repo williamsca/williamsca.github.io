@@ -20,6 +20,8 @@ collections:
     permalink: /:collection/:path/
   papers:
     output: false
+  presentations:
+    output: false
 
 # Defaults
 defaults:
@@ -52,3 +54,4 @@ exclude:
   - vendor
   - .gitignore
   - README.md
+  - scripts
