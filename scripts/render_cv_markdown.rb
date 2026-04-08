@@ -113,7 +113,7 @@ end
 
 puts "\n## Publications"
 if publications.empty?
-  puts "None yet."
+  puts ""
 else
   publications.each { |paper| puts "- #{paper_line(paper, publication: true)}" }
 end

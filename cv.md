@@ -46,27 +46,24 @@ description: "Curriculum vitae of Colin Williams"
                 {% endif %}
             </article>
             {% endfor %}
-        {% else %}
-        <p>None at the moment.</p>
         {% endif %}
     </section>
     <hr class="entry-divider cv-divider">
 
+    {% if publications.size > 0 %}
     <section class="cv-section">
         <h2>Publications</h2>
-        {% if publications.size > 0 %}
-            {% for paper in publications %}
-            <article class="cv-entry">
-                <p class="cv-entry-title">{{ paper.title }}</p>
-                <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
-            </article>
-            {% endfor %}
-        {% else %}
-        <p>None yet.</p>
-        {% endif %}
+        {% for paper in publications %}
+        <article class="cv-entry">
+            <p class="cv-entry-title">{{ paper.title }}</p>
+            <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
+        </article>
+        {% endfor %}
     </section>
     <hr class="entry-divider cv-divider">
+    {% endif %}
 
+    {% if presentations.size > 0 %}
     <section class="cv-section">
         <h2>Presentations, Schools, and Conferences</h2>
         <ul class="cv-list cv-year-list">
@@ -87,7 +84,9 @@ description: "Curriculum vitae of Colin Williams"
         {% endif %}
     </section>
     <hr class="entry-divider cv-divider">
+    {% endif %}
 
+    {% if site.data.cv.awards.size > 0 %}
     <section class="cv-section">
         <h2>Awards, Grants, and Fellowships</h2>
         <ul class="cv-list">
@@ -100,7 +99,9 @@ description: "Curriculum vitae of Colin Williams"
         </ul>
     </section>
     <hr class="entry-divider cv-divider">
+    {% endif %}
 
+    {% if site.data.cv.references.size > 0 or site.data.cv.references_note %}
     <section class="cv-section">
         <h2>References</h2>
         {% if site.data.cv.references.size > 0 %}
@@ -118,4 +119,5 @@ description: "Curriculum vitae of Colin Williams"
         <p>{{ site.data.cv.references_note }}</p>
         {% endif %}
     </section>
+    {% endif %}
 </div>
