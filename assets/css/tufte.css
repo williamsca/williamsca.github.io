@@ -502,6 +502,11 @@ p {
     margin-bottom: 0.2rem;
 }
 
+.cv-entry-inline-meta {
+    font-weight: normal;
+    color: #555;
+}
+
 .cv-entry-summary {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -527,6 +532,7 @@ p {
     .cv-row-meta,
     .cv-year-label,
     .cv-entry-meta,
+    .cv-entry-inline-meta,
     .cv-legend {
         color: #aaa;
     }

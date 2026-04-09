@@ -11,7 +11,7 @@ description: "Curriculum vitae of Colin Williams"
 
 <div class="cv-page">
     <div class="cv-button-row">
-        <a class="cv-download-button" href="{{ site.data.cv.pdf_url }}" target="_blank" rel="noopener">Download PDF</a>
+        <a class="cv-download-button" href="{{ site.data.cv.pdf_url }}" target="_blank" rel="noopener">Download PDF CV</a>
     </div>
 
     <section class="cv-section">
@@ -40,10 +40,7 @@ description: "Curriculum vitae of Colin Williams"
             {% unless paper.journal and paper.journal != "" %}
             {% assign has_works_in_progress = true %}
             <article class="cv-entry">
-                <p class="cv-entry-title">{{ paper.title }}</p>
-                {% if paper.coauthors %}
-                <p class="cv-entry-meta">with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</p>
-                {% endif %}
+                <p class="cv-entry-title">{{ paper.title }}{% if paper.coauthors %}<span class="cv-entry-inline-meta"> <em>with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</em></span>{% endif %}</p>
             </article>
             {% endunless %}
         {% endfor %}
@@ -73,16 +70,31 @@ description: "Curriculum vitae of Colin Williams"
 
     <section class="cv-section">
         <h2>Presentations, Schools, and Conferences</h2>
-        <ul class="cv-list">
+        <ul class="cv-list cv-year-list">
             {% assign has_presentations = false %}
+            {% assign current_year = "" %}
             {% for presentation in presentations %}
             {% assign has_presentations = true %}
+            {% assign presentation_year = presentation.date | date: "%Y" %}
             {% assign presentation_title = presentation.title | default: presentation.name %}
             {% assign presentation_date_iso = presentation.date | date: "%Y-%m-%d" %}
-            <li class="cv-row">
-                <span class="cv-row-main">{{ presentation_title }}{% if presentation_date_iso > today_iso %}<sup>&dagger;</sup>{% endif %}</span>
-                <span class="cv-row-meta">{{ presentation.date | date: "%Y" }}</span>
+            {% if presentation_year != current_year %}
+                {% unless forloop.first %}
+                </span>
             </li>
+                {% endunless %}
+                {% assign current_year = presentation_year %}
+            <li class="cv-year-row">
+                <span class="cv-year-label">{{ presentation_year }}</span>
+                <span class="cv-year-items">
+            {% else %}
+                , 
+            {% endif %}
+            {{ presentation_title }}{% if presentation_date_iso > today_iso %}<sup>&dagger;</sup>{% endif %}
+            {% if forloop.last %}
+                </span>
+            </li>
+            {% endif %}
             {% endfor %}
         </ul>
         {% unless has_presentations %}
