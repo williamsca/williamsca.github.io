@@ -5,15 +5,13 @@ permalink: /cv/
 description: "Curriculum vitae of Colin Williams"
 ---
 
-{% assign publications = site.papers | where_exp: "paper", "paper.journal != nil and paper.journal != ''" | sort: "date" | reverse %}
-{% assign works_in_progress = site.papers | where_exp: "paper", "paper.journal == nil or paper.journal == ''" | sort: "date" | reverse %}
+{% assign papers = site.papers | sort: "date" | reverse %}
 {% assign presentations = site.presentations | sort: "date" | reverse %}
-{% assign presentation_years = presentations | group_by_exp: "presentation", "presentation.date | date: '%Y'" %}
-{% assign scheduled_presentations = site.presentations | where_exp: "presentation", "presentation.date > site.time" %}
+{% assign today_iso = site.time | date: "%Y-%m-%d" %}
 
 <div class="cv-page">
     <div class="cv-button-row">
-        <a class="cv-download-button" href="{{ site.data.cv.pdf_url }}" target="_blank" rel="noopener">Download PDF CV</a>
+        <a class="cv-download-button" href="{{ site.data.cv.pdf_url }}" target="_blank" rel="noopener">Download PDF</a>
     </div>
 
     <section class="cv-section">
@@ -37,56 +35,72 @@ description: "Curriculum vitae of Colin Williams"
 
     <section class="cv-section">
         <h2>Works in Progress</h2>
-        {% if works_in_progress.size > 0 %}
-            {% for paper in works_in_progress %}
+        {% assign has_works_in_progress = false %}
+        {% for paper in papers %}
+            {% unless paper.journal and paper.journal != "" %}
+            {% assign has_works_in_progress = true %}
             <article class="cv-entry">
                 <p class="cv-entry-title">{{ paper.title }}</p>
                 {% if paper.coauthors %}
                 <p class="cv-entry-meta">with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</p>
                 {% endif %}
             </article>
-            {% endfor %}
-        {% endif %}
+            {% endunless %}
+        {% endfor %}
+        {% unless has_works_in_progress %}
+        <p>None at the moment.</p>
+        {% endunless %}
     </section>
     <hr class="entry-divider cv-divider">
 
-    {% if publications.size > 0 %}
     <section class="cv-section">
         <h2>Publications</h2>
-        {% for paper in publications %}
+        {% assign has_publications = false %}
+        {% for paper in papers %}
+        {% if paper.journal and paper.journal != "" %}
+        {% assign has_publications = true %}
         <article class="cv-entry">
             <p class="cv-entry-title">{{ paper.title }}</p>
             <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
         </article>
+        {% endif %}
         {% endfor %}
+        {% unless has_publications %}
+        <p>None yet.</p>
+        {% endunless %}
     </section>
     <hr class="entry-divider cv-divider">
-    {% endif %}
 
-    {% if presentations.size > 0 %}
     <section class="cv-section">
         <h2>Presentations, Schools, and Conferences</h2>
-        <ul class="cv-list cv-year-list">
-            {% for year in presentation_years %}
-            <li class="cv-year-row">
-                <span class="cv-year-label">{{ year.name }}</span>
-                <span class="cv-year-items">
-                    {% assign year_items = year.items | sort: "date" %}
-                    {% for presentation in year_items %}
-                        {{ presentation["title"] | default: presentation["name"] }}{% if presentation["date"] > site.time %}<sup>&dagger;</sup>{% endif %}{% unless forloop.last %}, {% endunless %}
-                    {% endfor %}
-                </span>
+        <ul class="cv-list">
+            {% assign has_presentations = false %}
+            {% for presentation in presentations %}
+            {% assign has_presentations = true %}
+            {% assign presentation_title = presentation.title | default: presentation.name %}
+            {% assign presentation_date_iso = presentation.date | date: "%Y-%m-%d" %}
+            <li class="cv-row">
+                <span class="cv-row-main">{{ presentation_title }}{% if presentation_date_iso > today_iso %}<sup>&dagger;</sup>{% endif %}</span>
+                <span class="cv-row-meta">{{ presentation.date | date: "%Y" }}</span>
             </li>
             {% endfor %}
         </ul>
-        {% if scheduled_presentations.size > 0 %}
+        {% unless has_presentations %}
+        <p>None yet.</p>
+        {% endunless %}
+        {% assign has_scheduled_presentations = false %}
+        {% for presentation in presentations %}
+        {% assign presentation_date_iso = presentation.date | date: "%Y-%m-%d" %}
+        {% if presentation_date_iso > today_iso %}
+        {% assign has_scheduled_presentations = true %}
+        {% endif %}
+        {% endfor %}
+        {% if has_scheduled_presentations %}
         <p class="cv-legend"><sup>&dagger;</sup> Scheduled.</p>
         {% endif %}
     </section>
     <hr class="entry-divider cv-divider">
-    {% endif %}
 
-    {% if site.data.cv.awards.size > 0 %}
     <section class="cv-section">
         <h2>Awards, Grants, and Fellowships</h2>
         <ul class="cv-list">
@@ -99,9 +113,7 @@ description: "Curriculum vitae of Colin Williams"
         </ul>
     </section>
     <hr class="entry-divider cv-divider">
-    {% endif %}
 
-    {% if site.data.cv.references.size > 0 or site.data.cv.references_note %}
     <section class="cv-section">
         <h2>References</h2>
         {% if site.data.cv.references.size > 0 %}
@@ -119,5 +131,4 @@ description: "Curriculum vitae of Colin Williams"
         <p>{{ site.data.cv.references_note }}</p>
         {% endif %}
     </section>
-    {% endif %}
 </div>
