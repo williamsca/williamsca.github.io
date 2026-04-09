@@ -1,5 +1,5 @@
 ---
-title: Price Theory Summer Camp
+title: Price Theory Summer Camp (U Chicago)
 date: "2024-07-15"
-institution: "University of Chicago"
+institution: "U Chicago"
 ---
