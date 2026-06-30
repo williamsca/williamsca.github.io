@@ -42,22 +42,22 @@ def tex_years(years)
   years.to_s.gsub("-", "--")
 end
 
-def tabularx(rows)
+def tabularx(rows, cols = "@{}X r@{}")
   return "" if rows.empty?
 
-  (["\\begin{tabularx}{\\textwidth}{@{}X r@{}}"] + rows + ["\\end{tabularx}"]).join("\n")
+  (["\\begin{tabularx}{\\textwidth}{#{cols}}"] + rows + ["\\end{tabularx}"]).join("\n")
 end
 
 def paper_line(paper, publication: false)
-  parts = [paper.fetch("title")]
-  if paper["coauthors"] && !paper["coauthors"].empty?
-    parts << "with #{paper['coauthors']}"
+  line = "``#{tex_escape(paper.fetch('title'))}''"
+  if paper["coauthors"] && !paper["coauthors"].to_s.empty?
+    line += " \\textit{with #{tex_escape(paper['coauthors'])}}"
   end
-  if publication && paper["journal"] && !paper["journal"].empty?
+  if publication && paper["journal"] && !paper["journal"].to_s.empty?
     year = parse_date(paper["date"])&.year
-    parts << "#{paper['journal']}#{year ? ", #{year}" : ""}"
+    line += " \\textit{#{tex_escape(paper['journal'])}#{year ? ", #{year}" : ''}}"
   end
-  parts.join(". ")
+  line
 end
 
 def presentation_rows(presentations, today)
@@ -127,18 +127,16 @@ citizenship: "#{cv.fetch('citizenship')}"
 #{cv.fetch('fields_of_interest').join(', ')}
 MARKDOWN
 
-puts "\n# Works in Progress"
+puts "\n# Works in Progress\n\n"
 if works_in_progress.empty?
   puts "None at the moment."
 else
-  works_in_progress.each { |paper| puts "- #{paper_line(paper)}" }
+  puts tabularx(works_in_progress.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}")
 end
 
-puts "\n# Publications"
-if publications.empty?
-  puts ""
-else
-  publications.each { |paper| puts "- #{paper_line(paper, publication: true)}" }
+puts "\n# Publications\n\n"
+unless publications.empty?
+  puts tabularx(publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}")
 end
 
 puts "\n# Presentations, Schools, and Conferences\n\n"
