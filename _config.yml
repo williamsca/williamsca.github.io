@@ -55,3 +55,4 @@ exclude:
   - .gitignore
   - README.md
   - scripts
+  - assets/latex

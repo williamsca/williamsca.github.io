@@ -32,6 +32,22 @@ rescue ArgumentError
   nil
 end
 
+# Escape characters that are special in LaTeX (CV data has no ~, ^, or \).
+def tex_escape(str)
+  str.to_s.gsub(/([&%$#_{}])/) { "\\#{Regexp.last_match(1)}" }
+end
+
+# Render hyphenated year ranges with an en-dash ("2021-present" -> "2021--present").
+def tex_years(years)
+  years.to_s.gsub("-", "--")
+end
+
+def tabularx(rows)
+  return "" if rows.empty?
+
+  (["\\begin{tabularx}{\\textwidth}{@{}X r@{}}"] + rows + ["\\end{tabularx}"]).join("\n")
+end
+
 def paper_line(paper, publication: false)
   parts = [paper.fetch("title")]
   if paper["coauthors"] && !paper["coauthors"].empty?
@@ -44,22 +60,30 @@ def paper_line(paper, publication: false)
   parts.join(". ")
 end
 
-def presentation_line(presentations, today)
-  dated_presentations = presentations.filter_map do |entry|
+def presentation_rows(presentations, today)
+  dated = presentations.filter_map do |entry|
     date = parse_date(entry["date"])
     next unless date
 
     [entry, date]
   end
 
-  grouped = dated_presentations.group_by { |(_, date)| date.year }.sort.reverse
+  grouped = dated.group_by { |(_, date)| date.year }.sort.reverse
   grouped.map do |year, entries|
-    rendered = entries.sort_by { |(_, date)| date }.map do |entry, date|
-      text = entry["title"] || entry["name"]
+    items = entries.sort_by { |(_, date)| date }.map do |entry, date|
+      text = tex_escape(entry["title"] || entry["name"])
       text += "\\textsuperscript{\\dag}" if date > today
       text
     end
-    "#{year}: #{rendered.join(', ')}"
+    "#{items.join(', ')} & #{year} \\\\"
+  end
+end
+
+def experience_rows(entries)
+  entries.map do |entry|
+    left = "\\textit{#{tex_escape(entry['role'])}}, #{tex_escape(entry['detail'])}"
+    right = entry["years"] ? tex_years(entry["years"]) : ""
+    "#{left} & #{right} \\\\"
   end
 end
 
@@ -74,63 +98,69 @@ publications.reverse!
 works_in_progress.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
 works_in_progress.reverse!
 
+website = cv.fetch("website")
+website_display = website.sub(%r{\Ahttps?://}, "").sub(%r{/\z}, "")
+address = cv.fetch("address_lines")
+
+# Header is passed to the pandoc template as metadata variables.
 puts <<~MARKDOWN
 ---
-title: #{cv.fetch("name")} CV
-geometry: margin=1in
-fontsize: 11pt
-header-includes:
-  - \\usepackage{setspace}
-  - \\setstretch{1.05}
+name: "#{cv.fetch('name')}"
+institution: "#{cv.fetch('institution')}"
+department: "#{cv.fetch('department')}"
+address1: "#{address[0]}"
+address2: "#{address[1]}"
+phone: "#{cv.fetch('phone')}"
+email: "#{cv.fetch('email')}"
+email_display: "#{cv.fetch('email_display')}"
+website: "#{website}"
+website_display: "#{website_display}"
+citizenship: "#{cv.fetch('citizenship')}"
 ---
 
-# #{cv.fetch("name")}
+# Education
 
-#{cv.fetch("institution")}  
-#{cv.fetch("department")}  
-#{cv.fetch("address_lines").join("  \n")}  
-#{cv.fetch("phone")}  
-[#{cv.fetch("email_display")}](mailto:#{cv.fetch("email")})  
-[#{cv.fetch("website")}](#{cv.fetch("website")})  
-Citizenship: #{cv.fetch("citizenship")}
+#{tabularx(cv.fetch('education').map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" })}
 
-## Education
+# Fields of Interest
+
+#{cv.fetch('fields_of_interest').join(', ')}
 MARKDOWN
 
-cv.fetch("education").each do |entry|
-  puts "- #{entry.fetch('degree')}, #{entry.fetch('institution')} (#{entry.fetch('years')})"
-end
-
-puts "\n## Fields of Interest"
-puts cv.fetch("fields_of_interest").join(", ")
-
-puts "\n## Works in Progress"
+puts "\n# Works in Progress"
 if works_in_progress.empty?
   puts "None at the moment."
 else
   works_in_progress.each { |paper| puts "- #{paper_line(paper)}" }
 end
 
-puts "\n## Publications"
+puts "\n# Publications"
 if publications.empty?
   puts ""
 else
   publications.each { |paper| puts "- #{paper_line(paper, publication: true)}" }
 end
 
-puts "\n## Presentations, Schools, and Conferences"
-presentation_line(presentations, today).each { |line| puts "- #{line}" }
+puts "\n# Presentations, Schools, and Conferences\n\n"
+puts tabularx(presentation_rows(presentations, today))
 if presentations.any? { |entry| (date = parse_date(entry["date"])) && date > today }
   puts "\n\\textsuperscript{\\dag} Scheduled."
 end
 
-puts "\n## Awards, Grants, and Fellowships"
-cv.fetch("awards").sort_by { |award| award.fetch("year") }.reverse.each do |award|
-  amount = award["amount"] ? ", #{award['amount']}" : ""
-  puts "- #{award.fetch('title')}, #{award.fetch('institution')}#{amount} (#{award.fetch('year')})"
+award_rows = cv.fetch("awards").sort_by { |award| award.fetch("year") }.reverse.map do |award|
+  amount = award["amount"] ? ", #{tex_escape(award['amount'])}" : ""
+  "#{tex_escape(award.fetch('title'))}, #{tex_escape(award.fetch('institution'))}#{amount} & #{award.fetch('year')} \\\\"
 end
+puts "\n# Awards, Grants, and Fellowships\n\n"
+puts tabularx(award_rows)
 
-puts "\n## References"
+puts "\n# Research and Professional Experience\n\n"
+puts tabularx(experience_rows(cv.fetch("research_experience")))
+
+puts "\n# Professional Service\n\n"
+puts tabularx(experience_rows(cv.fetch("professional_service")))
+
+puts "\n# References"
 if cv.fetch("references").empty?
   puts cv.fetch("references_note")
 else

@@ -1,0 +1,51 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Light blue hyperlinks, matching the hand-built resume.tex
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+}
+
+% Section headings: bold, uppercase, no numbering (the \mysection look)
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\normalfont\bfseries}{}{0pt}{\MakeUppercase}
+\titlespacing*{\section}{0pt}{1.4ex}{0.6ex}
+
+% Pandoc emits \tightlist for compact lists
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Large\bfseries $name$}
+\end{center}
+\hrule
+\vspace{1ex}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+$institution$ & $phone$ \\
+$department$ & \href{mailto:$email$}{$email_display$} \\
+$address1$ & \href{$website$}{$website_display$} \\
+$address2$ & Citizenship: $citizenship$ \\
+\end{tabularx}
+\vspace{1ex}
+\hrule
+
+\bigskip
+
+$body$
+
+\end{document}

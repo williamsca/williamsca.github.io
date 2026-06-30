@@ -129,6 +129,32 @@ description: "Curriculum vitae of Colin Williams"
     <hr class="entry-divider cv-divider">
 
     <section class="cv-section">
+        <h2>Research and Professional Experience</h2>
+        <ul class="cv-list">
+            {% for entry in site.data.cv.research_experience %}
+            <li class="cv-row">
+                <span class="cv-row-main"><em>{{ entry.role }}</em>, {{ entry.detail }}</span>
+                {% if entry.years %}<span class="cv-row-meta">{{ entry.years }}</span>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr class="entry-divider cv-divider">
+
+    <section class="cv-section">
+        <h2>Professional Service</h2>
+        <ul class="cv-list">
+            {% for entry in site.data.cv.professional_service %}
+            <li class="cv-row">
+                <span class="cv-row-main"><em>{{ entry.role }}</em>, {{ entry.detail }}</span>
+                {% if entry.years %}<span class="cv-row-meta">{{ entry.years }}</span>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr class="entry-divider cv-divider">
+
+    <section class="cv-section">
         <h2>References</h2>
         {% if site.data.cv.references.size > 0 %}
         <ul class="cv-list">

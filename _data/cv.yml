@@ -9,7 +9,7 @@ email_display: chv7bg@virginia.edu
 website: https://williamsca.github.io/
 phone: "(316) 258-2384"
 citizenship: USA
-pdf_url: https://www.dropbox.com/scl/fi/iypsgd14hola8uysqjui8/williams-cv-20250812.pdf?rlkey=xi18vt16qldbj7tuuzitu9uri&st=ceuo2mz3&dl=0
+pdf_url: https://williamsca.github.io/assets/files/colin-williams-cv.pdf
 
 education:
   - degree: Ph.D. Candidate, Economics
@@ -47,6 +47,25 @@ awards:
   - title: Snavely Award for Outstanding Summer Paper
     institution: University of Virginia
     year: 2023
+
+research_experience:
+  - role: Affiliate
+    detail: The Household and Urban Finance Lab, University of Virginia
+    years:
+  - role: Analyst
+    detail: NERA Economic Consulting, Antitrust Practice, Washington, DC
+    years: 2018-2021
+  - role: Research Assistant
+    detail: for Professor Stephen Sheppard, Williams College
+    years: 2017
+
+professional_service:
+  - role: Referee
+    detail: Journal of Law and Economics
+    years:
+  - role: Organizer
+    detail: Labor/Public Economics Workshop, University of Virginia
+    years: 2024-2025
 
 references: []
 references_note: Available upon request.
