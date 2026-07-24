@@ -1,15 +1,15 @@
 ---
-title: "Boundary Issues: Zoning and the Geography of Mobile Homes"
+title: "Municipal Zoning and the Geography of Mobile Homes"
 status: "Working Paper"
 coauthors:
 journal:
 date: "2025-12-01"
 arxiv:
-dropbox:
+pdf: # https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.pdf
 github:
 slides:
 slides_label:
 figure: assets/images/boundary_lumberton_nc.png
-summary: "I present a novel stylized fact about the geography of mobile homes: their prevalence doubles at municipal boundaries relative to site-built homes. This pattern is widespread across the U.S. and cannot be explained by changes in demographics or other observable characteristics. I argue that the discontinuity is driven by municipal zoning regulations which impose differential costs on mobile homes. I test this theory with a boundary regression discontinuity design, quantifying the impact of municipal regulations on mobile home shares and prices. Using my RDD estimates, I then calibrate a CES model of housing demand. I find that the average municipality imposes an implicit tax on mobile homes of roughly 10%. However, the welfare effects are muted because similar site-built homes are close substitutes."
+summary: "Local land use regulations shape not only how much housing is built but its composition. At municipal boundaries, the mobile home share of detached homes more than triples from roughly 2% to over 8%, suggesting that regulations within cities restrict mobile homes. Consistent with this interpretation, quality-adjusted prices of mobile homes decline by roughly $7,700 at the same boundaries even as site-built home prices evolve continuously, further evidence that regulation burdens mobile homes relative to site-built housing. I develop a sufficient statistics framework to assess these distortions to the composition of the housing stock. The framework leverages a CES demand model over differentiated housing varieties in which municipal zoning enters as a differential implicit tax on mobile homes. I map the two reduced-form statistics to two structural parameters: the implicit regulatory tax and the elasticity of substitution between mobile and site-built homes. The model implies a high elasticity of substitution between the two types conditional on size, vintage, and lot size. The high substitutability means that even a modest regulatory tax reduces the share of mobile homes in cities by more than 60% relative to its counterfactual level, suggesting that municipal land use regulations, not household sorting, drive both the ruralization and small market shares of mobile homes."
 ---
 

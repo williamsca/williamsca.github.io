@@ -11,13 +11,13 @@ headshot: "/assets/images/profile.jpg"
     Hi! </p>
 
     <p>
-        I am a fifth-year PhD candidate in Economics at the University of Virginia.</p>
+        I am a sixth-year PhD candidate in Economics at the University of Virginia.</p>
         
     <p>My research in urban and public economics examines how state and federal policies affect local governments and the
-    interactions between local fiscal and land use policies.</p>
+    interactions between local fiscal and land use policies. My work has been supported by the <a href="https://www.lincolninst.edu/research-fellowship-opportunities/c-lowell-harriss-dissertation-fellows-current-past/">Lincoln Institute of Land Policy.</a></p>
         
         <p>You can find my <a href="{{ '/cv/' | relative_url }}">CV here</a>,
-        including a PDF link and an HTML version, or you can read about my current projects below.
+        or you can read about my current projects below.
     </p>
 
     <p>I am available by email at <a href="mailto:williams.colinandrew@gmail.com">williams.colinandrew@gmail.com</a>.
@@ -57,33 +57,29 @@ headshot: "/assets/images/profile.jpg"
         </p>
         {% endif %}
 
-        <!-- Minimal text links -->
-        {% if paper.dropbox or paper.slides or paper.arxiv or paper.github or paper.html %}
+        <!-- Link buttons -->
+        {% if paper.pdf or paper.slides or paper.arxiv or paper.github or paper.html %}
         <div class="paper-links">
-            {% if paper.dropbox %}
-            <a href="{{ paper.dropbox }}" target="_blank" rel="noopener">Paper</a>
+            {% if paper.pdf %}
+            <a class="paper-link-button" href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>
             {% endif %}
 
             {% if paper.slides %}
-            {% if paper.dropbox %}<span class="link-separator">&middot;</span>{% endif %}
-            <a href="{{ paper.slides }}" target="_blank" rel="noopener">
+            <a class="paper-link-button" href="{{ paper.slides }}" target="_blank" rel="noopener">
                 {% if paper.slides_label %}{{ paper.slides_label }}{% else %}Slides{% endif %}
             </a>
             {% endif %}
 
             {% if paper.arxiv %}
-            {% if paper.dropbox or paper.slides %}<span class="link-separator">&middot;</span>{% endif %}
-            <a href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+            <a class="paper-link-button" href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
             {% endif %}
 
             {% if paper.github %}
-            {% if paper.dropbox or paper.slides or paper.arxiv %}<span class="link-separator">&middot;</span>{% endif %}
-            <a href="{{ paper.github }}" target="_blank" rel="noopener">GitHub</a>
+            <a class="paper-link-button" href="{{ paper.github }}" target="_blank" rel="noopener">GitHub</a>
             {% endif %}
 
             {% if paper.html %}
-            {% if paper.dropbox or paper.slides or paper.arxiv or paper.github %}<span class="link-separator">&middot;</span>{% endif %}
-            <a href="{{ paper.html }}" target="_blank" rel="noopener">HTML</a>
+            <a class="paper-link-button" href="{{ paper.html }}" target="_blank" rel="noopener">HTML</a>
             {% endif %}
         </div>
         {% endif %}
