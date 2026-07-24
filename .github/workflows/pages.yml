@@ -36,7 +36,8 @@ jobs:
             texlive-latex-base \
             texlive-latex-recommended \
             texlive-latex-extra \
-            texlive-fonts-recommended
+            texlive-fonts-recommended \
+            lmodern
 
       - name: Build CV PDF from the same data as the HTML CV
         run: ./scripts/build_cv_pdf.sh
