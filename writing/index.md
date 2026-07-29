@@ -18,7 +18,26 @@ description: "Blog posts and essays by Colin Williams"
           <p class="post-meta">{{ post.date | date: "%B %Y" }}</p>
           {% endif %}
 
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+          {%- comment -%}
+          Drop sidenote/marginnote spans so footnote text stays out of the excerpt.
+          {%- endcomment -%}
+          {%- assign excerpt_text = post.excerpt -%}
+          {%- assign note_markers = '<span class="sidenote">,<span class="marginnote">' | split: "," -%}
+          {%- for marker in note_markers -%}
+            {%- assign chunks = excerpt_text | split: marker -%}
+            {%- capture excerpt_text -%}
+              {%- for chunk in chunks -%}
+                {%- if forloop.first -%}
+                  {{- chunk -}}
+                {%- else -%}
+                  {%- assign after_note = chunk | split: '</span>' -%}
+                  {%- for piece in after_note offset: 1 -%}{{ piece }}{%- endfor -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+          {%- endfor -%}
+
+          <p class="post-excerpt">{{ excerpt_text | strip_html | truncatewords: 40 }}</p>
         </article>
       </a>
 
