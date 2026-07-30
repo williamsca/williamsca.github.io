@@ -7,6 +7,7 @@ journal:
 date: "2025-05-01"
 arxiv:
 pdf:
+markdown:
 github:
 slides:
 slides_label:

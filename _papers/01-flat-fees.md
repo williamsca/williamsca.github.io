@@ -6,6 +6,7 @@ journal:
 date: "2025-11-01"
 arxiv:
 pdf:
+markdown:
 github:
 slides: "https://www.dropbox.com/scl/fi/6rjtlca61iprgreb8lsg7/williams_enablingacts_20251123.pdf?rlkey=5frv8feb9ug7hqkqf3sgb4yvg&st=tjrbx96p&dl=0"
 slides_label: "Slides (2025 SEA)"

@@ -6,6 +6,7 @@ journal:
 date: "2025-06-01"
 arxiv:
 pdf: https://www.dropbox.com/scl/fi/btzs7eusrekmu1134c86l/williams_earmarks_20260213.pdf?rlkey=ifm8nyro7beu619uappaxezf9&st=fk5641k1&dl=0
+markdown:
 github:
 slides:
 slides_label:
