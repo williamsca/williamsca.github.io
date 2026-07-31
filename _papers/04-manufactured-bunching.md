@@ -3,10 +3,10 @@ title: "Municipal Zoning and the Geography of Mobile Homes (Job Market Paper)"
 status: "Working Paper"
 coauthors:
 journal:
-date: "2025-12-01"
+date: "2026-07-31"
 arxiv:
-pdf: # https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.pdf
-markdown:
+pdf: https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.pdf
+markdown: https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.md
 github:
 slides:
 slides_label:
