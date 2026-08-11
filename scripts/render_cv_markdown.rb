@@ -175,7 +175,7 @@ puts <<~MARKDOWN
 MARKDOWN
 
 if jmp_paper
-  puts "\n**JOB MARKET PAPER:** #{paper_line(jmp_paper)}"
+  puts "\n\\vspace{2.2ex}\n\n**JOB MARKET PAPER:** #{paper_line(jmp_paper)}"
 end
 
 puts "\n# Works in Progress\n\n"
