@@ -3,6 +3,7 @@ layout: page
 title: "CV"
 permalink: /cv/
 description: "Curriculum vitae of Colin Williams"
+pdf_button: true
 ---
 
 {% assign papers = site.papers | sort: "date" | reverse %}
@@ -10,10 +11,6 @@ description: "Curriculum vitae of Colin Williams"
 {% assign today_iso = site.time | date: "%Y-%m-%d" %}
 
 <div class="cv-page">
-    <div class="cv-button-row">
-        <a class="cv-download-button" href="{{ site.data.cv.pdf_url }}" target="_blank" rel="noopener">Download PDF</a>
-    </div>
-
     <section class="cv-section">
         <h2>Education</h2>
         <ul class="cv-list">
@@ -157,16 +154,17 @@ description: "Curriculum vitae of Colin Williams"
     <section class="cv-section">
         <h2>Committee</h2>
         {% if site.data.cv.committee.size > 0 %}
-        <ul class="cv-list">
+        <div class="cv-committee-grid">
             {% for member in site.data.cv.committee %}
-            <li class="cv-reference">
+            <div class="cv-reference">
                 <span class="cv-entry-title">{{ member.name }}</span>
                 {% if member.title %}<span>{{ member.title }}</span>{% endif %}
                 {% if member.institution %}<span>{{ member.institution }}</span>{% endif %}
                 {% if member.email %}<span><a href="mailto:{{ member.email }}">{{ member.email }}</a></span>{% endif %}
-            </li>
+                {% if member.phone %}<span>{{ member.phone }}</span>{% endif %}
+            </div>
             {% endfor %}
-        </ul>
+        </div>
         {% else %}
         <p>{{ site.data.cv.committee_note }}</p>
         {% endif %}

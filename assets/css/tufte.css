@@ -415,24 +415,27 @@ p {
     margin-left: 12.5%;
 }
 
-.cv-button-row {
+.page-header {
     display: flex;
-    justify-content: center;
-    margin: 1rem 0 3rem;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.cv-download-button {
+.page-header-button {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border: 1px solid #222;
     border-radius: 999px;
+    font-family: inherit;
     font-size: 1.15rem;
     text-decoration: none;
     background: #f4f1e8;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.cv-download-button:hover {
+.page-header-button:hover {
     background: #ece6d7;
     transform: translateY(-1px);
 }
@@ -529,13 +532,20 @@ p {
     margin-bottom: 1rem;
 }
 
+.cv-committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    width: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
-    .cv-download-button {
+    .page-header-button {
         border-color: #aaa;
         background: #202020;
     }
 
-    .cv-download-button:hover {
+    .page-header-button:hover {
         background: #2b2b2b;
     }
 
@@ -563,6 +573,10 @@ p {
     .cv-row-meta,
     .cv-year-label {
         white-space: normal;
+    }
+
+    .cv-committee-grid {
+        grid-template-columns: 1fr;
     }
 }
 
