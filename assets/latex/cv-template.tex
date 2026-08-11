@@ -3,10 +3,15 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern} % vector T1 fonts; without this pdflatex falls back to bitmaps
+\usepackage{array}
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{changepage} % adjustwidth: indents section bodies beneath flush-left headings
+
+% Loosen vertical rhythm throughout (table rows, paragraphs, section gaps)
+\renewcommand{\arraystretch}{1.35}
+\setlength{\parskip}{0.5em}
 
 % Remove page numbers
 \pagestyle{empty}
@@ -22,10 +27,10 @@
 % Section headings: bold, uppercase, no numbering (the \mysection look)
 \setcounter{secnumdepth}{0}
 \titleformat{\section}{\normalfont\bfseries}{}{0pt}{\MakeUppercase}
-\titlespacing*{\section}{0pt}{1.4ex}{0.6ex}
+\titlespacing*{\section}{0pt}{2.2ex}{1.2ex}
 
 % Pandoc emits \tightlist for compact lists
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0.2em}}
 
 \setlength{\parindent}{0pt}
 

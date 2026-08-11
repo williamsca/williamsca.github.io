@@ -43,6 +43,11 @@ def tex_years(years)
   years.to_s.gsub("-", "--")
 end
 
+# Escape characters special to LaTeX within a \href URL argument (e.g. Dropbox query strings).
+def tex_escape_url(url)
+  url.to_s.gsub(/([&%#])/) { "\\#{Regexp.last_match(1)}" }
+end
+
 def tabularx(rows, cols = "@{}X r@{}")
   return "" if rows.empty?
 
@@ -57,7 +62,9 @@ def indent(str)
 end
 
 def paper_line(paper, publication: false)
-  line = "``#{tex_escape(paper.fetch('title'))}''"
+  title = "``#{tex_escape(paper.fetch('title'))}''"
+  title = "\\href{#{tex_escape_url(paper['pdf'])}}{#{title}}" if paper["pdf"] && !paper["pdf"].to_s.empty?
+  line = title
   if paper["coauthors"] && !paper["coauthors"].to_s.empty?
     line += " \\textit{with #{tex_escape(paper['coauthors'])}}"
   end
@@ -158,11 +165,13 @@ puts <<~MARKDOWN
 
   #{indent([
     tabularx(["#{tex_escape(primary_degree.fetch('degree'))}, #{tex_escape(primary_degree.fetch('institution'))} & #{tex_years(primary_degree.fetch('years'))} \\\\"]),
+    "\\vspace{0.6em}",
     committee_block(cv.fetch("committee"), cv.fetch("committee_note")),
+    "\\vspace{0.6em}",
     tabularx(remaining_degrees.map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" }),
   ].reject(&:empty?).join("\n\n"))}
 
-  #{indent("\\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}")}
+  \\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}
 MARKDOWN
 
 if jmp_paper
