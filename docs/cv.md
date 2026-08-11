@@ -6,7 +6,7 @@ Content sources:
 
 - Papers come from [`_papers/`](/home/colin/Documents/williamsca.github.io/_papers). Entries with a non-empty `journal:` appear under Publications; the rest appear under Works in Progress.
 - Presentations come from [`_presentations/`](/home/colin/Documents/williamsca.github.io/_presentations). They are grouped by year on the page. Any presentation with a future `date:` gets a `†` marker and is labeled scheduled in the legend.
-- Education, fields of interest, awards, PDF link, and references live in [`_data/cv.yml`](/home/colin/Documents/williamsca.github.io/_data/cv.yml).
+- Education, fields of interest, awards, PDF link, and committee live in [`_data/cv.yml`](/home/colin/Documents/williamsca.github.io/_data/cv.yml).
 
 PDF build:
 

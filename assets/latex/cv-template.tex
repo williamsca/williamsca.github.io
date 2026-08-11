@@ -1,11 +1,14 @@
-\documentclass[11pt,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern} % vector T1 fonts; without this pdflatex falls back to bitmaps
+\usepackage{caladea} % metric-compatible substitute for Cambria (name/headings)
+\usepackage[default]{carlito} % metric-compatible substitute for Calibri (body)
+\renewcommand{\familydefault}{\sfdefault} % body text set in Carlito (Calibri)
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{changepage} % adjustwidth: indents section bodies beneath flush-left headings
 
 % Remove page numbers
 \pagestyle{empty}
@@ -32,7 +35,7 @@
 
 % Header
 \begin{center}
-    {\Large\bfseries $name$}
+    {\rmfamily\bfseries\fontsize{13}{15.6}\selectfont $name$}
 \end{center}
 \hrule
 \vspace{1ex}

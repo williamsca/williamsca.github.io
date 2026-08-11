@@ -3,6 +3,15 @@ resume.tex
 vendor/
 .bundle/
 
+CV Template.docx
+
 # Built from _data/cv.yml + collections by scripts/build_cv_pdf.sh (in CI)
 assets/files/colin-williams-cv.pdf
+
+# LaTeX build artifacts from local pdflatex/pandoc runs
+assets/latex/*.aux
+assets/latex/*.log
+assets/latex/*.out
+assets/latex/*.pdf
+assets/latex/*.synctex.gz
 

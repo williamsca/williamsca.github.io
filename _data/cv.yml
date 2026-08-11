@@ -14,7 +14,7 @@ pdf_url: https://williamsca.github.io/assets/files/colin-williams-cv.pdf
 education:
   - degree: Ph.D. Candidate, Economics
     institution: University of Virginia
-    years: 2021-present
+    years: Expected May 2027
   - degree: B.A. cum laude, Economics and Mathematics
     institution: Williams College
     years: 2018
@@ -71,5 +71,10 @@ professional_service:
     detail: Labor/Public Economics Workshop, University of Virginia
     years: 2024-2025
 
-references: []
-references_note: Available upon request.
+teaching_experience: []
+
+committee:
+  - name: Leora Friedberg
+    email: lfriedberg@virginia.edu
+    phone: "434-924-3225"
+committee_note: Available upon request.

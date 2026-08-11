@@ -4,6 +4,7 @@ require "yaml"
 require "date"
 
 ROOT = File.expand_path("..", __dir__)
+JMP_SUFFIX = " (Job Market Paper)"
 
 def read_front_matter(path)
   content = File.read(path)
@@ -48,6 +49,13 @@ def tabularx(rows, cols = "@{}X r@{}")
   (["\\begin{tabularx}{\\textwidth}{#{cols}}"] + rows + ["\\end{tabularx}"]).join("\n")
 end
 
+# Section bodies sit indented slightly beneath their (flush-left) heading.
+def indent(str)
+  return "" if str.to_s.strip.empty?
+
+  "\\begin{adjustwidth}{1em}{0pt}\n#{str}\n\\end{adjustwidth}"
+end
+
 def paper_line(paper, publication: false)
   line = "``#{tex_escape(paper.fetch('title'))}''"
   if paper["coauthors"] && !paper["coauthors"].to_s.empty?
@@ -87,12 +95,37 @@ def experience_rows(entries)
   end
 end
 
+def teaching_rows(entries)
+  entries.map do |entry|
+    left = "#{tex_escape(entry.fetch('course'))}, #{tex_escape(entry.fetch('title'))}"
+    "#{left} & #{tex_years(entry.fetch('term'))} \\\\"
+  end
+end
+
+def committee_block(committee, note)
+  return "Committee: #{note}" if committee.empty?
+
+  items = committee.map do |member|
+    parts = [tex_escape(member.fetch("name"))]
+    parts << "\\href{mailto:#{member['email']}}{#{tex_escape(member['email'])}}" if member["email"]
+    parts << tex_escape(member["phone"]) if member["phone"]
+    "\\item #{parts.join(', ')}"
+  end
+  (["\\textbf{Committee:}", "\\begin{enumerate}\\itemsep0pt"] + items + ["\\end{enumerate}"]).join("\n")
+end
+
 cv = YAML.safe_load(File.read(File.join(ROOT, "_data", "cv.yml")), aliases: false)
 papers = load_collection("_papers/*.md")
 presentations = load_collection("_presentations/*.md")
 today = Date.today
 
-publications, works_in_progress = papers.partition { |paper| paper["journal"] && !paper["journal"].to_s.empty? }
+jmp, other_papers = papers.partition { |paper| paper["jmp"] }
+jmp_paper = jmp.first
+if jmp_paper
+  jmp_paper = jmp_paper.merge("title" => jmp_paper.fetch("title").delete_suffix(JMP_SUFFIX))
+end
+
+publications, works_in_progress = other_papers.partition { |paper| paper["journal"] && !paper["journal"].to_s.empty? }
 publications.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
 publications.reverse!
 works_in_progress.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
@@ -102,45 +135,54 @@ website = cv.fetch("website")
 website_display = website.sub(%r{\Ahttps?://}, "").sub(%r{/\z}, "")
 address = cv.fetch("address_lines")
 
+education = cv.fetch("education")
+primary_degree, remaining_degrees = education.first, education.drop(1)
+
 # Header is passed to the pandoc template as metadata variables.
 puts <<~MARKDOWN
----
-name: "#{cv.fetch('name')}"
-institution: "#{cv.fetch('institution')}"
-department: "#{cv.fetch('department')}"
-address1: "#{address[0]}"
-address2: "#{address[1]}"
-phone: "#{cv.fetch('phone')}"
-email: "#{cv.fetch('email')}"
-email_display: "#{cv.fetch('email_display')}"
-website: "#{website}"
-website_display: "#{website_display}"
-citizenship: "#{cv.fetch('citizenship')}"
----
+  ---
+  name: "#{cv.fetch('name')}"
+  institution: "#{cv.fetch('institution')}"
+  department: "#{cv.fetch('department')}"
+  address1: "#{address[0]}"
+  address2: "#{address[1]}"
+  phone: "#{cv.fetch('phone')}"
+  email: "#{cv.fetch('email')}"
+  email_display: "#{cv.fetch('email_display')}"
+  website: "#{website}"
+  website_display: "#{website_display}"
+  citizenship: "#{cv.fetch('citizenship')}"
+  ---
 
-# Education
+  # Education
 
-#{tabularx(cv.fetch('education').map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" })}
+  #{indent([
+    tabularx(["#{tex_escape(primary_degree.fetch('degree'))}, #{tex_escape(primary_degree.fetch('institution'))} & #{tex_years(primary_degree.fetch('years'))} \\\\"]),
+    committee_block(cv.fetch("committee"), cv.fetch("committee_note")),
+    tabularx(remaining_degrees.map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" }),
+  ].reject(&:empty?).join("\n\n"))}
 
-# Fields of Interest
-
-#{cv.fetch('fields_of_interest').join(', ')}
+  #{indent("\\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}")}
 MARKDOWN
+
+if jmp_paper
+  puts "\n**JOB MARKET PAPER:** #{paper_line(jmp_paper)}"
+end
 
 puts "\n# Works in Progress\n\n"
 if works_in_progress.empty?
-  puts "None at the moment."
+  puts indent("None at the moment.")
 else
-  puts tabularx(works_in_progress.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}")
+  puts indent(tabularx(works_in_progress.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}"))
 end
 
 puts "\n# Publications\n\n"
 unless publications.empty?
-  puts tabularx(publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}")
+  puts indent(tabularx(publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}"))
 end
 
 puts "\n# Presentations, Schools, and Conferences\n\n"
-puts tabularx(presentation_rows(presentations, today))
+puts indent(tabularx(presentation_rows(presentations, today)))
 if presentations.any? { |entry| (date = parse_date(entry["date"])) && date > today }
   puts "\n\\textsuperscript{\\dag} Scheduled."
 end
@@ -150,20 +192,16 @@ award_rows = cv.fetch("awards").sort_by { |award| award.fetch("year") }.reverse.
   "#{tex_escape(award.fetch('title'))}, #{tex_escape(award.fetch('institution'))}#{amount} & #{award.fetch('year')} \\\\"
 end
 puts "\n# Awards, Grants, and Fellowships\n\n"
-puts tabularx(award_rows)
+puts indent(tabularx(award_rows))
 
 puts "\n# Research and Professional Experience\n\n"
-puts tabularx(experience_rows(cv.fetch("research_experience")))
+puts indent(tabularx(experience_rows(cv.fetch("research_experience"))))
 
 puts "\n# Professional Service\n\n"
-puts tabularx(experience_rows(cv.fetch("professional_service")))
+puts indent(tabularx(experience_rows(cv.fetch("professional_service"))))
 
-puts "\n# References"
-if cv.fetch("references").empty?
-  puts cv.fetch("references_note")
-else
-  cv.fetch("references").each do |reference|
-    parts = [reference["name"], reference["title"], reference["institution"], reference["email"]].compact
-    puts "- #{parts.join(', ')}"
-  end
+teaching_experience = cv.fetch("teaching_experience")
+unless teaching_experience.empty?
+  puts "\n# Teaching Experience\n\n"
+  puts indent(tabularx(teaching_rows(teaching_experience)))
 end

@@ -1,5 +1,6 @@
 ---
 title: "Municipal Zoning and the Geography of Mobile Homes (Job Market Paper)"
+jmp: true
 status: "Working Paper"
 coauthors:
 journal:

@@ -155,20 +155,20 @@ description: "Curriculum vitae of Colin Williams"
     <hr class="entry-divider cv-divider">
 
     <section class="cv-section">
-        <h2>References</h2>
-        {% if site.data.cv.references.size > 0 %}
+        <h2>Committee</h2>
+        {% if site.data.cv.committee.size > 0 %}
         <ul class="cv-list">
-            {% for reference in site.data.cv.references %}
+            {% for member in site.data.cv.committee %}
             <li class="cv-reference">
-                <span class="cv-entry-title">{{ reference.name }}</span>
-                {% if reference.title %}<span>{{ reference.title }}</span>{% endif %}
-                {% if reference.institution %}<span>{{ reference.institution }}</span>{% endif %}
-                {% if reference.email %}<span><a href="mailto:{{ reference.email }}">{{ reference.email }}</a></span>{% endif %}
+                <span class="cv-entry-title">{{ member.name }}</span>
+                {% if member.title %}<span>{{ member.title }}</span>{% endif %}
+                {% if member.institution %}<span>{{ member.institution }}</span>{% endif %}
+                {% if member.email %}<span><a href="mailto:{{ member.email }}">{{ member.email }}</a></span>{% endif %}
             </li>
             {% endfor %}
         </ul>
         {% else %}
-        <p>{{ site.data.cv.references_note }}</p>
+        <p>{{ site.data.cv.committee_note }}</p>
         {% endif %}
     </section>
 </div>
