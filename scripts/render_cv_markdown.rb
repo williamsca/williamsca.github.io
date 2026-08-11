@@ -165,10 +165,10 @@ puts <<~MARKDOWN
 
   #{indent([
     tabularx(["#{tex_escape(primary_degree.fetch('degree'))}, #{tex_escape(primary_degree.fetch('institution'))} & #{tex_years(primary_degree.fetch('years'))} \\\\"]),
-    "\\vspace{0.6em}",
     committee_block(cv.fetch("committee"), cv.fetch("committee_note")),
     "\\vspace{0.6em}",
     tabularx(remaining_degrees.map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" }),
+    "\\vspace{0.6em}",
   ].reject(&:empty?).join("\n\n"))}
 
   \\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}
