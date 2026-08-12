@@ -421,6 +421,13 @@ p {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 55%;
+    margin-left: 12.5%;
+}
+
+.page-header h1 {
+    width: auto;
+    margin-left: 0;
 }
 
 .page-header-button {
@@ -479,6 +486,10 @@ p {
 .cv-year-label {
     flex: 0 0 auto;
     color: #555;
+    white-space: nowrap;
+}
+
+.cv-inline-list {
     white-space: nowrap;
 }
 
@@ -565,9 +576,14 @@ p {
 }
 
 @media (max-width: 760px) {
-    .cv-page {
+    .cv-page,
+    .page-header {
         width: 100%;
         margin-left: 0;
+    }
+
+    .cv-inline-list {
+        white-space: normal;
     }
 
     .cv-row,
