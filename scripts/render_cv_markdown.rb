@@ -169,17 +169,16 @@ puts <<~MARKDOWN
   \\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}
 MARKDOWN
 
-puts "\n# Research\n\n"
 unless publications.empty?
-  puts "**PUBLICATIONS**\n\n"
+  puts "\n# Publications\n\n"
   puts indent(tabularx(publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}"))
 end
 
-puts "\n**WORKING PAPERS**\n\n"
+puts "\n# Working Papers\n\n"
 puts indent(tabularx(working_papers.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}"))
 
 unless other_publications.empty?
-  puts "\n**OTHER PUBLICATIONS**\n\n"
+  puts "\n# Other Publications\n\n"
   puts indent(tabularx(other_publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}"))
 end
 

@@ -8,6 +8,7 @@ date: "2026-07-31"
 arxiv:
 pdf: https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.pdf
 markdown: https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.md
+link: https://colin-williams-research.s3.amazonaws.com/manufactured-bunching/paper.pdf
 github:
 slides:
 slides_label:

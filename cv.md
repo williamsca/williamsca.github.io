@@ -31,8 +31,6 @@ pdf_button: true
     <hr class="entry-divider cv-divider">
 
     <section class="cv-section">
-        <h2>Research</h2>
-
         {% assign has_publications = false %}
         {% for paper in papers %}
         {% if paper.status == "Publication" %}
@@ -40,18 +38,17 @@ pdf_button: true
         {% endif %}
         {% endfor %}
         {% if has_publications %}
-        <h3>Publications</h3>
+        <h2>Publications</h2>
         {% for paper in papers %}
         {% if paper.status == "Publication" %}
         <article class="cv-entry">
-            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</p>
-            <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
+            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
         </article>
         {% endif %}
         {% endfor %}
         {% endif %}
 
-        <h3>Working Papers</h3>
+        <h2>Working Papers</h2>
         {% assign has_working_papers = false %}
         {% for paper in papers %}
             {% if paper.status == "Working Paper" %}
@@ -72,12 +69,11 @@ pdf_button: true
         {% endif %}
         {% endfor %}
         {% if has_other_publications %}
-        <h3>Other Publications</h3>
+        <h2>Other Publications</h2>
         {% for paper in papers %}
         {% if paper.status == "Other Publication" %}
         <article class="cv-entry">
-            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</p>
-            <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
+            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
         </article>
         {% endif %}
         {% endfor %}
