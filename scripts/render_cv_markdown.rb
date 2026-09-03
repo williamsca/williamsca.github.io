@@ -95,7 +95,13 @@ end
 
 def experience_rows(entries)
   entries.map do |entry|
-    left = "\\textit{#{tex_escape(entry['role'])}}, #{tex_escape(entry['detail'])}"
+    detail = tex_escape(entry["detail"])
+    if entry["link"] && entry["link_text"]
+      link_text = tex_escape(entry["link_text"])
+      linked_text = "\\href{#{tex_escape_url(entry['link'])}}{#{link_text}}"
+      detail = detail.sub(link_text) { linked_text }
+    end
+    left = "\\textit{#{tex_escape(entry['role'])}}, #{detail}"
     right = entry["years"] ? tex_years(entry["years"]) : ""
     "#{left} & #{right} \\\\"
   end

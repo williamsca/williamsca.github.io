@@ -6,7 +6,7 @@ Content sources:
 
 - Papers come from [`_papers/`](/home/colin/Documents/williamsca.github.io/_papers). Their `status:` values place them under Publications, Working Papers, or Other Publications; an optional `link:` makes the title clickable in both CV versions.
 - Presentations come from [`_presentations/`](/home/colin/Documents/williamsca.github.io/_presentations). They are grouped by year on the page. Any presentation with a future `date:` gets a `†` marker and is labeled scheduled in the legend.
-- Education, fields of interest, awards, PDF link, and committee live in [`_data/cv.yml`](/home/colin/Documents/williamsca.github.io/_data/cv.yml).
+- Education, fields of interest, awards, PDF link, experience, and committee live in [`_data/cv.yml`](/home/colin/Documents/williamsca.github.io/_data/cv.yml). Experience entries can use `link_text:` and `link:` to link part of their detail in both CV versions.
 
 PDF build:
 

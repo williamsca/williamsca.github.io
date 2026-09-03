@@ -146,7 +146,7 @@ pdf_button: true
         <ul class="cv-list">
             {% for entry in site.data.cv.research_experience %}
             <li class="cv-row">
-                <span class="cv-row-main"><em>{{ entry.role }}</em>, {{ entry.detail }}</span>
+                <span class="cv-row-main"><em>{{ entry.role }}</em>, {% if entry.link and entry.link_text %}{% capture linked_detail %}<a href="{{ entry.link }}" target="_blank" rel="noopener">{{ entry.link_text }}</a>{% endcapture %}{{ entry.detail | replace: entry.link_text, linked_detail }}{% else %}{{ entry.detail }}{% endif %}</span>
                 {% if entry.years %}<span class="cv-row-meta">{{ entry.years }}</span>{% endif %}
             </li>
             {% endfor %}
