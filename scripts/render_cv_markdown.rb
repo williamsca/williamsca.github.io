@@ -4,8 +4,6 @@ require "yaml"
 require "date"
 
 ROOT = File.expand_path("..", __dir__)
-JMP_SUFFIX = " (Job Market Paper)"
-
 def read_front_matter(path)
   content = File.read(path)
   match = content.match(/\A---\s*\n(.*?)\n---\s*\n/m)
@@ -63,7 +61,8 @@ end
 
 def paper_line(paper, publication: false)
   title = "``#{tex_escape(paper.fetch('title'))}''"
-  title = "\\href{#{tex_escape_url(paper['pdf'])}}{#{title}}" if paper["pdf"] && !paper["pdf"].to_s.empty?
+  url = [paper["pdf"], paper["link"]].find { |value| value && !value.to_s.empty? }
+  title = "\\href{#{tex_escape_url(url)}}{#{title}}" if url
   line = title
   if paper["coauthors"] && !paper["coauthors"].to_s.empty?
     line += " \\textit{with #{tex_escape(paper['coauthors'])}}"
@@ -126,17 +125,13 @@ papers = load_collection("_papers/*.md")
 presentations = load_collection("_presentations/*.md")
 today = Date.today
 
-jmp, other_papers = papers.partition { |paper| paper["jmp"] }
-jmp_paper = jmp.first
-if jmp_paper
-  jmp_paper = jmp_paper.merge("title" => jmp_paper.fetch("title").delete_suffix(JMP_SUFFIX))
+publications = papers.select { |paper| paper["status"] == "Publication" }
+working_papers = papers.select { |paper| paper["status"] == "Working Paper" }
+other_publications = papers.select { |paper| paper["status"] == "Other Publication" }
+[publications, working_papers, other_publications].each do |group|
+  group.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
+  group.reverse!
 end
-
-publications, works_in_progress = other_papers.partition { |paper| paper["journal"] && !paper["journal"].to_s.empty? }
-publications.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
-publications.reverse!
-works_in_progress.sort_by! { |paper| parse_date(paper["date"]) || Date.new(1900, 1, 1) }
-works_in_progress.reverse!
 
 website = cv.fetch("website")
 website_display = website.sub(%r{\Ahttps?://}, "").sub(%r{/\z}, "")
@@ -174,20 +169,18 @@ puts <<~MARKDOWN
   \\textbf{FIELDS OF INTEREST:} #{cv.fetch('fields_of_interest').join(', ')}
 MARKDOWN
 
-if jmp_paper
-  puts "\n\\vspace{2.2ex}\n\n**JOB MARKET PAPER:** #{paper_line(jmp_paper)}"
-end
-
-puts "\n# Works in Progress\n\n"
-if works_in_progress.empty?
-  puts indent("None at the moment.")
-else
-  puts indent(tabularx(works_in_progress.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}"))
-end
-
-puts "\n# Publications\n\n"
+puts "\n# Research\n\n"
 unless publications.empty?
+  puts "**PUBLICATIONS**\n\n"
   puts indent(tabularx(publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}"))
+end
+
+puts "\n**WORKING PAPERS**\n\n"
+puts indent(tabularx(working_papers.map { |paper| "#{paper_line(paper)} \\\\" }, "@{}X@{}"))
+
+unless other_publications.empty?
+  puts "\n**OTHER PUBLICATIONS**\n\n"
+  puts indent(tabularx(other_publications.map { |paper| "#{paper_line(paper, publication: true)} \\\\" }, "@{}X@{}"))
 end
 
 puts "\n# Presentations, Schools, and Conferences\n\n"

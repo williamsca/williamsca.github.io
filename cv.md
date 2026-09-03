@@ -31,37 +31,57 @@ pdf_button: true
     <hr class="entry-divider cv-divider">
 
     <section class="cv-section">
-        <h2>Works in Progress</h2>
-        {% assign has_works_in_progress = false %}
-        {% for paper in papers %}
-            {% unless paper.journal and paper.journal != "" %}
-            {% assign has_works_in_progress = true %}
-            <article class="cv-entry">
-                <p class="cv-entry-title">{{ paper.title }}{% if paper.coauthors %}<span class="cv-entry-inline-meta"> <em>with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</em></span>{% endif %}</p>
-            </article>
-            {% endunless %}
-        {% endfor %}
-        {% unless has_works_in_progress %}
-        <p>None at the moment.</p>
-        {% endunless %}
-    </section>
-    <hr class="entry-divider cv-divider">
+        <h2>Research</h2>
 
-    <section class="cv-section">
-        <h2>Publications</h2>
         {% assign has_publications = false %}
         {% for paper in papers %}
-        {% if paper.journal and paper.journal != "" %}
+        {% if paper.status == "Publication" %}
         {% assign has_publications = true %}
+        {% endif %}
+        {% endfor %}
+        {% if has_publications %}
+        <h3>Publications</h3>
+        {% for paper in papers %}
+        {% if paper.status == "Publication" %}
         <article class="cv-entry">
-            <p class="cv-entry-title">{{ paper.title }}</p>
+            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</p>
             <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
         </article>
         {% endif %}
         {% endfor %}
-        {% unless has_publications %}
-        <p></p>
+        {% endif %}
+
+        <h3>Working Papers</h3>
+        {% assign has_working_papers = false %}
+        {% for paper in papers %}
+            {% if paper.status == "Working Paper" %}
+            {% assign has_working_papers = true %}
+            <article class="cv-entry">
+                <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.coauthors %}<span class="cv-entry-inline-meta"> <em>with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</em></span>{% endif %}</p>
+            </article>
+            {% endif %}
+        {% endfor %}
+        {% unless has_working_papers %}
+        <p>None at the moment.</p>
         {% endunless %}
+
+        {% assign has_other_publications = false %}
+        {% for paper in papers %}
+        {% if paper.status == "Other Publication" %}
+        {% assign has_other_publications = true %}
+        {% endif %}
+        {% endfor %}
+        {% if has_other_publications %}
+        <h3>Other Publications</h3>
+        {% for paper in papers %}
+        {% if paper.status == "Other Publication" %}
+        <article class="cv-entry">
+            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</p>
+            <p class="cv-entry-meta"><span class="paper-journal">{{ paper.journal }}</span>{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</p>
+        </article>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
     </section>
     <hr class="entry-divider cv-divider">
 

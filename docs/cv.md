@@ -4,7 +4,7 @@ The HTML CV lives at `/cv/` and is rendered from [cv.md](/home/colin/Documents/w
 
 Content sources:
 
-- Papers come from [`_papers/`](/home/colin/Documents/williamsca.github.io/_papers). Entries with a non-empty `journal:` appear under Publications; the rest appear under Works in Progress.
+- Papers come from [`_papers/`](/home/colin/Documents/williamsca.github.io/_papers). Their `status:` values place them under Publications, Working Papers, or Other Publications; an optional `link:` makes the title clickable in both CV versions.
 - Presentations come from [`_presentations/`](/home/colin/Documents/williamsca.github.io/_presentations). They are grouped by year on the page. Any presentation with a future `date:` gets a `†` marker and is labeled scheduled in the legend.
 - Education, fields of interest, awards, PDF link, and committee live in [`_data/cv.yml`](/home/colin/Documents/williamsca.github.io/_data/cv.yml).
 

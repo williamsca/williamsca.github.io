@@ -32,79 +32,25 @@ headshot: "/assets/images/profile.jpg"
 <hr class="entry-divider">
 
 <section>
-    <h2> Selected Research </h2>
+    <h2> Research </h2>
     {% assign sorted_papers = site.papers | sort: 'date' | reverse %}
+    {% assign has_publications = false %}
     {% for paper in sorted_papers %}
-    <article class="paper-entry">
-        <!-- Title -->
-        <h3 class="paper-title">{% if paper.figure %}{% include marginnote.html id=paper.slug image=paper.figure
-            alt=paper.figure_alt content=paper.figure_caption %}{% endif %}{{ paper.title }}</h3>
+    {% if paper.status == "Publication" %}{% assign has_publications = true %}{% endif %}
+    {% endfor %}
+    {% if has_publications %}<h3>Publications</h3>{% endif %}
+    {% for paper in sorted_papers %}
+    {% if paper.status == "Publication" %}
+    {% include paper-entry.html paper=paper %}
+    {% endif %}
+    {% endfor %}
 
-        <!-- Coauthors line -->
-        {% if paper.coauthors %}
-        <p class="paper-coauthors">
-            with {% if paper.coauthor_url %}
-            <a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>
-            {% else %}
-            {{ paper.coauthors }}
-            {% endif %}
-        </p>
-        {% endif %}
-
-        <!-- Journal/date line -->
-        {% if paper.date %}
-        <p class="paper-meta">
-            {% if paper.journal %}
-            <span class="paper-journal">{{ paper.journal }}</span>, {{ paper.date | date: "%B %Y" }}
-            {% else %}
-            Working Paper, {{ paper.date | date: "%B %Y" }}
-            {% endif %}
-        </p>
-        {% endif %}
-
-        <!-- Link buttons -->
-        {% if paper.pdf or paper.markdown or paper.slides or paper.arxiv or paper.github or paper.html %}
-        <div class="paper-links">
-            {% if paper.pdf %}
-            <a class="paper-link-button" href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>
-            {% endif %}
-
-            {% if paper.markdown %}
-            <a class="paper-link-button" href="{{ paper.markdown }}" target="_blank" rel="noopener"
-                title="Plain Markdown version, for LLMs and other machine readers">Markdown</a>
-            {% endif %}
-
-            {% if paper.slides %}
-            <a class="paper-link-button" href="{{ paper.slides }}" target="_blank" rel="noopener">
-                {% if paper.slides_label %}{{ paper.slides_label }}{% else %}Slides{% endif %}
-            </a>
-            {% endif %}
-
-            {% if paper.arxiv %}
-            <a class="paper-link-button" href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
-            {% endif %}
-
-            {% if paper.github %}
-            <a class="paper-link-button" href="{{ paper.github }}" target="_blank" rel="noopener">GitHub</a>
-            {% endif %}
-
-            {% if paper.html %}
-            <a class="paper-link-button" href="{{ paper.html }}" target="_blank" rel="noopener">HTML</a>
-            {% endif %}
-        </div>
-        {% endif %}
-
-        <!-- Inline summary -->
-        {% if paper.summary %}
-        <p class="paper-summary">{{ paper.summary }}</p>
-        {% endif %}
-
-
-    </article>
-
-    {% unless forloop.last %}
+    <h3>Working Papers</h3>
+    {% for paper in sorted_papers %}
+    {% if paper.status == "Working Paper" %}
+    {% include paper-entry.html paper=paper %}
     <hr class="entry-divider">
-    {% endunless %}
+    {% endif %}
     {% endfor %}
 
     <section>
