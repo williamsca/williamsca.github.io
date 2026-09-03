@@ -15,10 +15,9 @@
     </p>
     {% endif %}
 
-    {% if paper.pdf or paper.link or paper.markdown or paper.slides or paper.arxiv or paper.github or paper.html %}
+    {% if paper.pdf or paper.markdown or paper.slides or paper.arxiv or paper.github or paper.html %}
     <div class="paper-links">
         {% if paper.pdf %}<a class="paper-link-button" href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
-        {% if paper.link %}<a class="paper-link-button" href="{{ paper.link }}" target="_blank" rel="noopener">Link</a>{% endif %}
         {% if paper.markdown %}<a class="paper-link-button" href="{{ paper.markdown }}" target="_blank" rel="noopener" title="Plain Markdown version, for LLMs and other machine readers">Markdown</a>{% endif %}
         {% if paper.slides %}<a class="paper-link-button" href="{{ paper.slides }}" target="_blank" rel="noopener">{% if paper.slides_label %}{{ paper.slides_label }}{% else %}Slides{% endif %}</a>{% endif %}
         {% if paper.arxiv %}<a class="paper-link-button" href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>{% endif %}

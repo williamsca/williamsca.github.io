@@ -41,8 +41,9 @@ pdf_button: true
         <h2>Publications</h2>
         {% for paper in papers %}
         {% if paper.status == "Publication" %}
+        {% assign paper_url = paper.link | default: paper.pdf %}
         <article class="cv-entry">
-            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
+            <p class="cv-entry-title">{% if paper_url %}<a href="{{ paper_url }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
         </article>
         {% endif %}
         {% endfor %}
@@ -53,8 +54,9 @@ pdf_button: true
         {% for paper in papers %}
             {% if paper.status == "Working Paper" %}
             {% assign has_working_papers = true %}
+            {% assign paper_url = paper.link | default: paper.pdf %}
             <article class="cv-entry">
-                <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.coauthors %}<span class="cv-entry-inline-meta"> <em>with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</em></span>{% endif %}</p>
+                <p class="cv-entry-title">{% if paper_url %}<a href="{{ paper_url }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.coauthors %}<span class="cv-entry-inline-meta"> <em>with {% if paper.coauthor_url %}<a href="{{ paper.coauthor_url }}" target="_blank" rel="noopener">{{ paper.coauthors }}</a>{% else %}{{ paper.coauthors }}{% endif %}</em></span>{% endif %}</p>
             </article>
             {% endif %}
         {% endfor %}
@@ -72,8 +74,9 @@ pdf_button: true
         <h2>Other Publications</h2>
         {% for paper in papers %}
         {% if paper.status == "Other Publication" %}
+        {% assign paper_url = paper.link | default: paper.pdf %}
         <article class="cv-entry">
-            <p class="cv-entry-title">{% if paper.link %}<a href="{{ paper.link }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
+            <p class="cv-entry-title">{% if paper_url %}<a href="{{ paper_url }}" target="_blank" rel="noopener">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}{% if paper.journal %}<span class="cv-entry-inline-meta">, {{ paper.journal }}{% if paper.date %}, {{ paper.date | date: "%Y" }}{% endif %}</span>{% endif %}</p>
         </article>
         {% endif %}
         {% endfor %}

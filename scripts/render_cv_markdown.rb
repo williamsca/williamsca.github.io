@@ -61,7 +61,7 @@ end
 
 def paper_line(paper, publication: false)
   title = "``#{tex_escape(paper.fetch('title'))}''"
-  url = [paper["pdf"], paper["link"]].find { |value| value && !value.to_s.empty? }
+  url = [paper["link"], paper["pdf"]].find { |value| value && !value.to_s.empty? }
   title = "\\href{#{tex_escape_url(url)}}{#{title}}" if url
   line = title
   if paper["coauthors"] && !paper["coauthors"].to_s.empty?
