@@ -32,20 +32,19 @@ headshot: "/assets/images/profile.jpg"
 <hr class="entry-divider">
 
 <section>
-    <h2> Research </h2>
     {% assign sorted_papers = site.papers | sort: 'date' | reverse %}
     {% assign has_publications = false %}
     {% for paper in sorted_papers %}
     {% if paper.status == "Publication" %}{% assign has_publications = true %}{% endif %}
     {% endfor %}
-    {% if has_publications %}<h3>Publications</h3>{% endif %}
+    {% if has_publications %}<h2>Publications</h2>{% endif %}
     {% for paper in sorted_papers %}
     {% if paper.status == "Publication" %}
     {% include paper-entry.html paper=paper %}
     {% endif %}
     {% endfor %}
 
-    <h3>Working Papers</h3>
+    <h2>Working Papers</h2>
     {% for paper in sorted_papers %}
     {% if paper.status == "Working Paper" %}
     {% include paper-entry.html paper=paper %}
