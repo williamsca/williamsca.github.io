@@ -53,6 +53,9 @@ awards:
     year: 2023
 
 research_experience:
+  - role: Intern
+    detail: AWS Business Systems
+    years: Summer 2026
   - role: Affiliate
     detail: The Household and Urban Finance Lab, University of Virginia
     years:
@@ -72,8 +75,6 @@ professional_service:
   - role: Organizer
     detail: Labor/Public Economics Workshop, University of Virginia
     years: 2024-2025
-
-teaching_experience: []
 
 committee:
   - name: Leora Friedberg
