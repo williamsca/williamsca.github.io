@@ -109,7 +109,14 @@ end
 
 def teaching_rows(entries)
   entries.map do |entry|
-    left = "#{tex_escape(entry.fetch('course'))}, #{tex_escape(entry.fetch('title'))}"
+    instructors = entry.fetch("instructors").map do |instructor|
+      name = tex_escape(instructor.fetch("name"))
+      instructor["link"] ? "\\href{#{tex_escape_url(instructor['link'])}}{#{name}}" : name
+    end.join(" and ")
+    role = tex_escape(entry.fetch("role"))
+    role += "; Head TA, #{tex_years(entry['head_ta_term'])}" if entry["head_ta_term"]
+    left = "#{tex_escape(entry.fetch('title'))}, #{tex_escape(entry.fetch('institution'))}"
+    left += " \\newline \\textit{#{role}}; for #{instructors}"
     "#{left} & #{tex_years(entry.fetch('term'))} \\\\"
   end
 end
@@ -129,6 +136,7 @@ end
 cv = YAML.safe_load(File.read(File.join(ROOT, "_data", "cv.yml")), aliases: false)
 papers = load_collection("_papers/*.md")
 presentations = load_collection("_presentations/*.md")
+courses = load_collection("_courses/*.md").sort_by { |course| course.fetch("order") }
 today = Date.today
 
 publications = papers.select { |paper| paper["status"] == "Publication" }
@@ -194,6 +202,11 @@ if presentations.any? { |entry| (date = parse_date(entry["date"])) && date > tod
   puts "\n\\textsuperscript{\\dag} Scheduled."
 end
 
+unless courses.empty?
+  puts "\n# Teaching Experience\n\n"
+  puts indent(tabularx(teaching_rows(courses)))
+end
+
 award_rows = cv.fetch("awards").sort_by { |award| award.fetch("year") }.reverse.map do |award|
   amount = award["amount"] ? ", #{tex_escape(award['amount'])}" : ""
   "#{tex_escape(award.fetch('title'))}, #{tex_escape(award.fetch('institution'))}#{amount} & #{award.fetch('year')} \\\\"
@@ -206,9 +219,3 @@ puts indent(tabularx(experience_rows(cv.fetch("research_experience"))))
 
 puts "\n# Professional Service\n\n"
 puts indent(tabularx(experience_rows(cv.fetch("professional_service"))))
-
-teaching_experience = cv.fetch("teaching_experience")
-unless teaching_experience.empty?
-  puts "\n# Teaching Experience\n\n"
-  puts indent(tabularx(teaching_rows(teaching_experience)))
-end
