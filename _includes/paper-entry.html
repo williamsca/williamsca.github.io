@@ -11,7 +11,7 @@
 
     {% if paper.date %}
     <p class="paper-meta">
-        {% if paper.journal %}<span class="paper-journal">{{ paper.journal }}</span>, {{ paper.date | date: "%B %Y" }}{% else %}Working Paper, {{ paper.date | date: "%B %Y" }}{% endif %}
+        {% if paper.journal %}<span class="paper-journal">{{ paper.journal }}</span>, {{ paper.date | date: "%B %Y" }}{% else %}Working Paper, {{ paper.date | date: "%B %Y" }}{% endif %}{% if paper.note %} | {{ paper.note }}{% endif %}
     </p>
     {% endif %}
 
@@ -26,5 +26,5 @@
     </div>
     {% endif %}
 
-    {% if paper.summary %}<p class="paper-summary">{{ paper.summary }}</p>{% endif %}
+    {% if paper.summary %}<p class="paper-summary">{{ paper.summary | escape }}</p>{% endif %}
 </article>
