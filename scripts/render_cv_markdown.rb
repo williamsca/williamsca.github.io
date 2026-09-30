@@ -121,8 +121,8 @@ def teaching_rows(entries)
   end
 end
 
-def committee_block(committee, note)
-  return "Committee: #{note}" if committee.empty?
+def committee_block(committee)
+  return "" if committee.empty?
 
   items = committee.map do |member|
     parts = [tex_escape(member.fetch("name"))]
@@ -174,7 +174,7 @@ puts <<~MARKDOWN
 
   #{indent([
     tabularx(["#{tex_escape(primary_degree.fetch('degree'))}, #{tex_escape(primary_degree.fetch('institution'))} & #{tex_years(primary_degree.fetch('years'))} \\\\"]),
-    committee_block(cv.fetch("committee"), cv.fetch("committee_note")),
+    committee_block(cv.fetch("committee")),
     "\\vspace{0.6em}",
     tabularx(remaining_degrees.map { |e| "#{tex_escape(e.fetch('degree'))}, #{tex_escape(e.fetch('institution'))} & #{tex_years(e.fetch('years'))} \\\\" }),
     "\\vspace{0.6em}",

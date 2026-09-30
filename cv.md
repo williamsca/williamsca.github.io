@@ -184,8 +184,6 @@ pdf_button: true
             </div>
             {% endfor %}
         </div>
-        {% else %}
-        <p>{{ site.data.cv.committee_note }}</p>
         {% endif %}
     </section>
 </div>
