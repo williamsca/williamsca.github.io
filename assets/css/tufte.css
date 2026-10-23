@@ -1084,7 +1084,7 @@ body {
 }
 
 /* Headshot-specific styling (circular crop, optional) */
-.marginnote img[alt="Colin Williams"] {
+.profile-photo img {
     /* Uncomment for circular headshot:
     border-radius: 50%;
     aspect-ratio: 1;
@@ -1113,5 +1113,16 @@ body {
     .sidenote img {
         max-width: 80%;
         margin: 0.5rem auto;
+    }
+
+    .profile-photo {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .profile-photo img {
+        max-width: 200px;
     }
 }

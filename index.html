@@ -1,26 +1,27 @@
 ---
 layout: default
 permalink: /
-description: "Colin Williams, economics researcher at the University of Virginia focusing on urban and public
-economics."
+description: "Colin Williams, economics researcher at the University of Virginia focusing on urban economics,
+public economics, and trade."
 headshot: "/assets/images/profile.jpg"
 ---
 
 <section>
-    <p>{% include marginnote.html id="headshot" image=page.headshot alt="Colin Williams" %}
+    <p><span class="marginnote profile-photo"><img src="{{ page.headshot | relative_url }}" alt="Colin Williams" /></span>
     Hi! </p>
 
     <p>
         I am a sixth-year PhD candidate in Economics at the University of Virginia.</p>
         
-    <p>My research in urban and public economics examines how state and federal policies affect local governments and the
+    <p>My research in urban economics, public economics, and trade examines how state and federal policies affect local governments and the
     interactions between local fiscal and land use policies. My work has been supported by the <a href="https://www.lincolninst.edu/research-fellowship-opportunities/c-lowell-harriss-dissertation-fellows-current-past/">Lincoln Institute of Land Policy.</a></p>
         
         <p>You can find my <a href="{{ '/cv/' | relative_url }}">CV here</a>,
         or you can read about my current projects below. I am available by email at <a href="mailto:williams.colinandrew@gmail.com">williams.colinandrew@gmail.com</a>.
     </p>
 
-    <p><strong>I am on the 2026-2027 job market and will present my job market paper at the following conferences:</strong>
+    {% assign jmp = site.papers | where: 'jmp', true | first %}
+    <p><strong>I am on the 2026-2027 job market and will present my <a href="{{ jmp.pdf }}">job market paper</a> at the following conferences:</strong>
     </p>
     <ul>
         <li><strong>UEA Annual Meeting</strong> (Chicago)</li>
